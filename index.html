@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
 <meta charset="UTF-8">
@@ -23,7 +22,7 @@ transition:opacity 0.9s ease,visibility 0.9s ease;
 }
 #loader.hide{opacity:0;visibility:hidden;pointer-events:none;}
 .ld-name{
-font-family:‘Playfair Display’,serif;font-style:italic;font-size:2.6rem;
+font-family:'Playfair Display',serif;font-style:italic;font-size:2.6rem;
 color:#d4c0e8;text-shadow:0 0 30px rgba(180,100,220,0.7);
 opacity:0;animation:ldFade 1s ease 0.2s forwards;
 }
@@ -41,10 +40,9 @@ position:absolute;bottom:0;left:0;right:0;height:0%;
 background:rgba(180,80,200,0.25);animation:ldFill 2.5s ease 0.8s forwards;
 }
 @keyframes ldFill{to{height:100%;}}
-.ld-bag-lbl{font-family:‘Playfair Display’,serif;font-style:italic;font-size:0.85rem;color:rgba(200,127,200,0.8);position:relative;z-index:1;}
+.ld-bag-lbl{font-family:'Playfair Display',serif;font-style:italic;font-size:0.85rem;color:rgba(200,127,200,0.8);position:relative;z-index:1;}
 .ld-tube{
 width:2px;height:50px;
-background:-webkit-linear-gradient(top,rgba(180,80,200,0.6),rgba(180,80,200,0.1));
 background:linear-gradient(to bottom,rgba(180,80,200,0.6),rgba(180,80,200,0.1));
 position:relative;
 }
@@ -55,7 +53,7 @@ animation:ldDrop 0.85s ease-in-out infinite;
 }
 @keyframes ldDrop{0%{top:0;opacity:1;}80%{opacity:1;}100%{top:46px;opacity:0;}}
 .ld-rx{
-font-family:‘Space Mono’,monospace;font-size:0.6rem;letter-spacing:0.26em;color:#9060b8;
+font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.26em;color:#9060b8;
 opacity:0;animation:ldFade 1s ease 0.7s forwards;
 }
 .ld-bar-wrap{
@@ -64,12 +62,11 @@ opacity:0;animation:ldFade 0.5s ease 1s forwards;
 }
 .ld-bar{
 height:100%;width:0%;
-background:-webkit-linear-gradient(left,rgba(180,80,200,0.4),rgba(220,160,255,0.8));
 background:linear-gradient(to right,rgba(180,80,200,0.4),rgba(220,160,255,0.8));
 animation:ldBar 2.4s ease 1.1s forwards;
 }
 @keyframes ldBar{to{width:100%;}}
-.ld-hint{font-family:‘Space Mono’,monospace;font-size:0.56rem;letter-spacing:0.18em;color:#5040a0;opacity:0;animation:ldFade 0.5s ease 1s forwards;}
+.ld-hint{font-family:'Space Mono',monospace;font-size:0.56rem;letter-spacing:0.18em;color:#5040a0;opacity:0;animation:ldFade 0.5s ease 1s forwards;}
 @keyframes ldFade{to{opacity:1;}}
 
 /* ===== STARFIELD ===== */
@@ -82,27 +79,25 @@ nav{
 position:fixed;top:0;left:0;right:0;z-index:200;
 display:grid;grid-template-columns:1fr auto 1fr;align-items:center;
 padding:16px 32px;
-background:-webkit-linear-gradient(top,rgba(5,3,15,0.97),rgba(5,3,15,0));
 background:linear-gradient(to bottom,rgba(5,3,15,0.97),rgba(5,3,15,0));
 backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);
 }
 .nav-l,.nav-r{display:flex;gap:24px;align-items:center;}
 .nav-r{justify-content:flex-end;}
 .nav-a{
-font-family:‘Space Mono’,monospace;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;
+font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.18em;text-transform:uppercase;
 color:#b8a8d0;transition:color 0.3s;position:relative;
 }
-.nav-a::after{content:’’;position:absolute;bottom:-3px;left:0;right:0;height:1px;background:#c87fc8;transform:scaleX(0);transition:transform 0.3s;transform-origin:left;}
+.nav-a::after{content:'';position:absolute;bottom:-3px;left:0;right:0;height:1px;background:#c87fc8;transform:scaleX(0);transition:transform 0.3s;transform-origin:left;}
 .nav-a:hover{color:#e8b0e8;}
 .nav-a:hover::after{transform:scaleX(1);}
 .nav-logo{text-align:center;}
-.nav-logo span{font-family:‘Zen Old Mincho’,serif;font-size:0.95rem;letter-spacing:0.35em;color:#d4c0e8;text-shadow:0 0 18px rgba(180,100,200,0.6);}
+.nav-logo span{font-family:'Zen Old Mincho',serif;font-size:0.95rem;letter-spacing:0.35em;color:#d4c0e8;text-shadow:0 0 18px rgba(180,100,200,0.6);}
 
 /* ===== HERO ===== */
 .hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;z-index:1;}
 .hero-bg{
 position:absolute;inset:0;
-background:-webkit-radial-gradient(60% 40%,ellipse,rgba(120,50,160,0.58) 0%,rgba(40,10,80,0.52) 40%,rgba(5,3,15,0.88) 80%);
 background:radial-gradient(ellipse at 60% 40%,rgba(120,50,160,0.58) 0%,rgba(40,10,80,0.52) 40%,rgba(5,3,15,0.88) 80%);
 }
 .neb{position:absolute;border-radius:50%;filter:blur(80px);pointer-events:none;mix-blend-mode:screen;}
@@ -120,23 +115,22 @@ max-width:1100px;width:100%;padding:110px 40px 60px;gap:40px;
 .hbadge{
 display:inline-flex;align-items:center;gap:8px;
 background:rgba(180,80,200,0.15);border:1px solid rgba(180,80,200,0.3);border-radius:100px;
-padding:6px 16px;font-family:‘Space Mono’,monospace;font-size:0.56rem;
+padding:6px 16px;font-family:'Space Mono',monospace;font-size:0.56rem;
 letter-spacing:0.18em;color:#c87fc8;margin-bottom:22px;
 }
 .bdot{width:6px;height:6px;border-radius:50%;background:#c87fc8;animation:bpulse 2s ease infinite;}
 @keyframes bpulse{0%,100%{opacity:1;transform:scale(1);}50%{opacity:0.35;transform:scale(0.5);}}
-.hcatch{font-family:‘Zen Old Mincho’,serif;font-size:0.98rem;line-height:2.1;color:#c0a8d8;letter-spacing:0.08em;margin-bottom:14px;}
-.hname{font-family:‘Playfair Display’,serif;font-size:4.4rem;font-weight:700;line-height:1;margin-bottom:6px;color:#f0e8ff;text-shadow:0 0 40px rgba(180,100,220,0.5),0 2px 0 rgba(100,40,140,0.8);}
-.hname-ja{font-family:‘Zen Old Mincho’,serif;font-size:1rem;letter-spacing:0.5em;color:#9878b8;margin-bottom:26px;}
+.hcatch{font-family:'Zen Old Mincho',serif;font-size:0.98rem;line-height:2.1;color:#c0a8d8;letter-spacing:0.08em;margin-bottom:14px;}
+.hname{font-family:'Playfair Display',serif;font-size:4.4rem;font-weight:700;line-height:1;margin-bottom:6px;color:#f0e8ff;text-shadow:0 0 40px rgba(180,100,220,0.5),0 2px 0 rgba(100,40,140,0.8);}
+.hname-ja{font-family:'Zen Old Mincho',serif;font-size:1rem;letter-spacing:0.5em;color:#9878b8;margin-bottom:26px;}
 .htag{font-size:0.85rem;line-height:2.1;color:#a090c0;max-width:420px;border-left:2px solid rgba(180,80,200,0.4);padding-left:20px;margin-bottom:30px;}
 .hcta-row{display:flex;gap:12px;flex-wrap:wrap;}
-.hcta{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:100px;font-family:‘Space Mono’,monospace;font-size:0.6rem;letter-spacing:0.1em;transition:all 0.3s;}
+.hcta{display:inline-flex;align-items:center;gap:8px;padding:12px 24px;border-radius:100px;font-family:'Space Mono',monospace;font-size:0.6rem;letter-spacing:0.1em;transition:all 0.3s;}
 .hcta-p{
-background:-webkit-linear-gradient(135deg,rgba(160,60,200,0.6),rgba(100,30,160,0.6));
 background:linear-gradient(135deg,rgba(160,60,200,0.6),rgba(100,30,160,0.6));
 border:1px solid rgba(180,80,200,0.5);color:#f0e0ff;
 }
-.hcta-p:hover{background:-webkit-linear-gradient(135deg,rgba(180,80,220,0.75),rgba(120,40,180,0.75));background:linear-gradient(135deg,rgba(180,80,220,0.75),rgba(120,40,180,0.75));transform:translateY(-2px);box-shadow:0 8px 24px rgba(160,60,200,0.3);}
+.hcta-p:hover{background:linear-gradient(135deg,rgba(180,80,220,0.75),rgba(120,40,180,0.75));transform:translateY(-2px);box-shadow:0 8px 24px rgba(160,60,200,0.3);}
 .hcta-s{background:transparent;border:1px solid rgba(180,80,200,0.3);color:#c0a0d8;}
 .hcta-s:hover{background:rgba(180,80,200,0.1);border-color:rgba(180,80,200,0.6);color:#e0c8f8;}
 
@@ -152,7 +146,7 @@ border:1px solid rgba(180,80,200,0.5);color:#f0e0ff;
 position:absolute;top:20px;right:-22px;
 background:rgba(10,5,25,0.92);border:1px solid rgba(180,80,200,0.4);border-radius:12px;
 padding:14px 17px;z-index:5;
-font-family:‘Space Mono’,monospace;font-size:0.55rem;color:#c87fc8;letter-spacing:0.12em;
+font-family:'Space Mono',monospace;font-size:0.55rem;color:#c87fc8;letter-spacing:0.12em;
 backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:flt 5s ease-in-out -2s infinite;
 }
 .rxf-t{font-size:0.47rem;color:#7050a0;margin-bottom:8px;}
@@ -165,7 +159,6 @@ backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:flt 5s eas
 .sprog.on{opacity:1;}
 .sprog-bar{
 height:100%;width:0%;
-background:-webkit-linear-gradient(left,rgba(200,127,200,0.4),rgba(230,180,255,1));
 background:linear-gradient(to right,rgba(200,127,200,0.4),rgba(230,180,255,1));
 }
 
@@ -173,7 +166,7 @@ background:linear-gradient(to right,rgba(200,127,200,0.4),rgba(230,180,255,1));
 .toast{
 position:fixed;bottom:40px;left:50%;transform:translateX(-50%) translateY(16px);
 background:rgba(10,5,25,0.96);border:1px solid rgba(200,127,200,0.5);border-radius:100px;
-padding:12px 28px;font-family:‘Space Mono’,monospace;font-size:0.6rem;
+padding:12px 28px;font-family:'Space Mono',monospace;font-size:0.6rem;
 color:#d4a0e8;letter-spacing:0.14em;z-index:9998;opacity:0;transition:all 0.4s ease;
 pointer-events:none;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
 }
@@ -181,19 +174,19 @@ pointer-events:none;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px
 
 /* DIVIDERS */
 .ddiv{position:relative;z-index:1;display:flex;justify-content:center;align-items:center;padding:8px 0;}
-.dline{width:1px;height:68px;background:-webkit-linear-gradient(top,rgba(180,80,200,0),rgba(180,80,200,0.6),rgba(180,80,200,0));background:linear-gradient(to bottom,rgba(180,80,200,0),rgba(180,80,200,0.6),rgba(180,80,200,0));}
+.dline{width:1px;height:68px;background:linear-gradient(to bottom,rgba(180,80,200,0),rgba(180,80,200,0.6),rgba(180,80,200,0));}
 .dcirc{width:9px;height:9px;border-radius:50%;background:rgba(180,80,200,0.5);border:1px solid rgba(180,80,200,0.8);position:absolute;animation:ddrop 3s ease-in-out infinite;}
 @keyframes ddrop{0%{transform:translateY(-28px);opacity:0;}30%{opacity:1;}70%{opacity:1;}100%{transform:translateY(28px);opacity:0;}}
 .csep{display:flex;align-items:center;gap:16px;padding:8px 40px;max-width:1000px;margin:0 auto;position:relative;z-index:1;}
-.csl{flex:1;height:1px;background:-webkit-linear-gradient(left,rgba(180,80,200,0),rgba(180,80,200,0.3));background:linear-gradient(to right,rgba(180,80,200,0),rgba(180,80,200,0.3));}
-.csr{background:-webkit-linear-gradient(right,rgba(180,80,200,0),rgba(180,80,200,0.3));background:linear-gradient(to left,rgba(180,80,200,0),rgba(180,80,200,0.3));}
-.csi{font-size:0.54rem;color:rgba(180,80,200,0.5);font-family:‘Space Mono’,monospace;}
+.csl{flex:1;height:1px;background:linear-gradient(to right,rgba(180,80,200,0),rgba(180,80,200,0.3));}
+.csr{background:linear-gradient(to left,rgba(180,80,200,0),rgba(180,80,200,0.3));}
+.csi{font-size:0.54rem;color:rgba(180,80,200,0.5);font-family:'Space Mono',monospace;}
 
 /* SECTIONS */
 .sec{position:relative;z-index:1;padding:76px 40px;max-width:1000px;margin:0 auto;}
-.sec-lbl{font-family:‘Space Mono’,monospace;font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:#9060b8;margin-bottom:10px;display:flex;align-items:center;gap:12px;}
-.sec-lbl::before{content:’’;display:block;width:26px;height:1px;background:rgba(144,96,184,0.6);}
-.sec-ttl{font-family:‘Zen Old Mincho’,serif;font-size:1.72rem;font-weight:400;letter-spacing:0.2em;color:#d4c0e8;margin-bottom:42px;text-shadow:0 0 20px rgba(160,80,200,0.28);}
+.sec-lbl{font-family:'Space Mono',monospace;font-size:0.55rem;letter-spacing:0.3em;text-transform:uppercase;color:#9060b8;margin-bottom:10px;display:flex;align-items:center;gap:12px;}
+.sec-lbl::before{content:'';display:block;width:26px;height:1px;background:rgba(144,96,184,0.6);}
+.sec-ttl{font-family:'Zen Old Mincho',serif;font-size:1.72rem;font-weight:400;letter-spacing:0.2em;color:#d4c0e8;margin-bottom:42px;text-shadow:0 0 20px rgba(160,80,200,0.28);}
 
 /* ABOUT */
 .about-g{display:grid;grid-template-columns:1fr 1.3fr;gap:56px;align-items:center;}
@@ -209,17 +202,17 @@ background:rgba(10,5,25,0.74);border:1px solid rgba(180,80,200,0.26);border-radi
 padding:36px 44px;max-width:650px;width:100%;
 backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);position:relative;overflow:hidden;
 }
-.pc::before{content:‘Rx’;position:absolute;top:16px;right:24px;font-family:‘Playfair Display’,serif;font-style:italic;font-size:2.8rem;color:rgba(180,80,200,0.09);pointer-events:none;}
-.pc::after{content:’’;position:absolute;top:0;left:0;right:0;height:2px;background:-webkit-linear-gradient(left,rgba(180,80,200,0),rgba(180,80,200,0.7),rgba(180,80,200,0));background:linear-gradient(to right,rgba(180,80,200,0),rgba(180,80,200,0.7),rgba(180,80,200,0));}
+.pc::before{content:'Rx';position:absolute;top:16px;right:24px;font-family:'Playfair Display',serif;font-style:italic;font-size:2.8rem;color:rgba(180,80,200,0.09);pointer-events:none;}
+.pc::after{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(to right,rgba(180,80,200,0),rgba(180,80,200,0.7),rgba(180,80,200,0));}
 .pc-head{display:flex;align-items:center;gap:12px;margin-bottom:20px;padding-bottom:17px;border-bottom:1px solid rgba(180,80,200,0.14);}
-.pc-rk{font-family:‘Playfair Display’,serif;font-size:1.3rem;font-style:italic;color:#c87fc8;text-shadow:0 0 12px rgba(200,127,200,0.5);}
-.pc-hosp{font-family:‘Space Mono’,monospace;font-size:0.54rem;color:#7058a0;letter-spacing:0.15em;}
-.pc-row{display:flex;gap:12px;margin-bottom:9px;font-family:‘Space Mono’,monospace;font-size:0.66rem;align-items:flex-start;}
+.pc-rk{font-family:'Playfair Display',serif;font-size:1.3rem;font-style:italic;color:#c87fc8;text-shadow:0 0 12px rgba(200,127,200,0.5);}
+.pc-hosp{font-family:'Space Mono',monospace;font-size:0.54rem;color:#7058a0;letter-spacing:0.15em;}
+.pc-row{display:flex;gap:12px;margin-bottom:9px;font-family:'Space Mono',monospace;font-size:0.66rem;align-items:flex-start;}
 .pc-l{color:#7058a0;min-width:100px;letter-spacing:0.05em;}
 .pc-v{color:#c0a8d8;line-height:1.8;}
 .pc-v a{color:#c87fc8;transition:color 0.3s;}
 .pc-v a:hover{color:#e8a0e8;}
-.pc-ft{margin-top:20px;padding-top:17px;border-top:1px solid rgba(180,80,200,0.14);font-family:‘Space Mono’,monospace;font-size:0.54rem;color:#5e4e9a;letter-spacing:0.1em;display:flex;justify-content:space-between;}
+.pc-ft{margin-top:20px;padding-top:17px;border-top:1px solid rgba(180,80,200,0.14);font-family:'Space Mono',monospace;font-size:0.54rem;color:#5e4e9a;letter-spacing:0.1em;display:flex;justify-content:space-between;}
 
 /* YOUTUBE */
 .yt-sec{padding:60px 40px;max-width:1000px;margin:0 auto;position:relative;z-index:1;}
@@ -227,9 +220,9 @@ backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);position:relative;
 .yt-it{border-radius:13px;overflow:hidden;border:1px solid rgba(180,80,200,0.18);background:rgba(10,5,25,0.5);transition:all 0.35s ease;}
 .yt-it:hover{border-color:rgba(180,80,200,0.52);transform:translateY(-4px);box-shadow:0 12px 32px rgba(180,80,200,0.14);}
 .yt-it iframe{width:100%;aspect-ratio:16/9;display:block;border:none;}
-.yt-lbl{padding:11px 15px;font-family:‘Space Mono’,monospace;font-size:0.58rem;color:#7858a8;letter-spacing:0.1em;}
+.yt-lbl{padding:11px 15px;font-family:'Space Mono',monospace;font-size:0.58rem;color:#7858a8;letter-spacing:0.1em;}
 .yt-full{grid-column:span 2;}
-.yt-note{font-family:‘Space Mono’,monospace;font-size:0.56rem;color:#4a3570;letter-spacing:0.1em;text-align:center;margin-top:18px;opacity:0.7;line-height:1.9;}
+.yt-note{font-family:'Space Mono',monospace;font-size:0.56rem;color:#4a3570;letter-spacing:0.1em;text-align:center;margin-top:18px;opacity:0.7;line-height:1.9;}
 
 /* X EMBED */
 .x-sec{padding:60px 40px;max-width:680px;margin:0 auto;position:relative;z-index:1;}
@@ -240,7 +233,7 @@ padding:22px;max-height:580px;overflow-y:auto;
 }
 .x-wrap::-webkit-scrollbar{width:3px;}
 .x-wrap::-webkit-scrollbar-thumb{background:rgba(180,80,200,0.3);border-radius:2px;}
-.x-note{font-family:‘Space Mono’,monospace;font-size:0.58rem;color:#5e4e90;letter-spacing:0.1em;text-align:center;padding:12px 0 6px;}
+.x-note{font-family:'Space Mono',monospace;font-size:0.58rem;color:#5e4e90;letter-spacing:0.1em;text-align:center;padding:12px 0 6px;}
 
 /* GALLERY */
 .gal-sec{padding:60px 40px;max-width:1100px;margin:0 auto;position:relative;z-index:1;}
@@ -250,7 +243,7 @@ padding:22px;max-height:580px;overflow-y:auto;
 .gal-it:first-child{grid-column:span 2;aspect-ratio:2/1;}
 .gal-it img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform 0.5s,filter 0.5s;filter:brightness(0.87);}
 .gal-it:hover img{transform:scale(1.04);filter:brightness(1);}
-.gal-ov{position:absolute;inset:0;background:-webkit-linear-gradient(top,transparent 50%,rgba(10,5,25,0.7) 100%);background:linear-gradient(to bottom,transparent 50%,rgba(10,5,25,0.7) 100%);opacity:0;transition:opacity 0.4s;}
+.gal-ov{position:absolute;inset:0;background:linear-gradient(to bottom,transparent 50%,rgba(10,5,25,0.7) 100%);opacity:0;transition:opacity 0.4s;}
 .gal-it:hover .gal-ov{opacity:1;}
 
 /* LINKS */
@@ -264,29 +257,29 @@ transition:all 0.35s ease;color:#c0a0d8;
 }
 .lnk-c:hover{background:rgba(180,80,200,0.13);border-color:rgba(180,80,200,0.6);transform:translateY(-3px);box-shadow:0 8px 24px rgba(180,80,200,0.17);}
 .lnk-ic{font-size:1.1rem;flex-shrink:0;width:34px;height:34px;border-radius:9px;background:rgba(180,80,200,0.12);display:flex;align-items:center;justify-content:center;}
-.lnk-tt{font-family:‘Space Mono’,monospace;font-size:0.64rem;letter-spacing:0.1em;color:#d4b0e8;margin-bottom:3px;}
-.lnk-sb{font-family:‘Space Mono’,monospace;font-size:0.52rem;color:#7058a0;letter-spacing:0.08em;}
+.lnk-tt{font-family:'Space Mono',monospace;font-size:0.64rem;letter-spacing:0.1em;color:#d4b0e8;margin-bottom:3px;}
+.lnk-sb{font-family:'Space Mono',monospace;font-size:0.52rem;color:#7058a0;letter-spacing:0.08em;}
 .lnk-full{grid-column:span 2;}
 
 /* DRIP DECO */
 .ddeco{position:fixed;right:26px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;align-items:center;pointer-events:none;}
 .ddeco-b{width:29px;height:37px;background:rgba(15,8,35,0.86);border:1.5px solid rgba(180,80,200,0.5);border-radius:7px 7px 11px 11px;display:flex;align-items:center;justify-content:center;}
-.ddeco-bl{font-family:‘Playfair Display’,serif;font-style:italic;font-size:0.52rem;color:rgba(200,127,200,0.7);}
-.ddeco-t{width:2px;height:54px;background:-webkit-linear-gradient(top,rgba(180,80,200,0.5),rgba(180,80,200,0.12));background:linear-gradient(to bottom,rgba(180,80,200,0.5),rgba(180,80,200,0.12));position:relative;}
+.ddeco-bl{font-family:'Playfair Display',serif;font-style:italic;font-size:0.52rem;color:rgba(200,127,200,0.7);}
+.ddeco-t{width:2px;height:54px;background:linear-gradient(to bottom,rgba(180,80,200,0.5),rgba(180,80,200,0.12));position:relative;}
 .ddeco-d{width:5px;height:5px;border-radius:0 50% 50% 50%;background:rgba(200,127,200,0.85);position:absolute;left:50%;transform:translateX(-50%);animation:ddfall 2.5s ease-in-out infinite;}
 @keyframes ddfall{0%{top:0;opacity:1;}80%{opacity:1;}100%{top:50px;opacity:0;}}
 
 /* FLOATING PILLS */
 .fp{position:fixed;border-radius:100px;pointer-events:none;opacity:0.09;z-index:0;}
-.fp1{width:56px;height:22px;background:-webkit-linear-gradient(left,#c87fc8 50%,#f0f0f0 50%);background:linear-gradient(to right,#c87fc8 50%,#f0f0f0 50%);top:19%;left:6%;animation:fpf 8s ease-in-out infinite;transform:rotate(35deg);}
-.fp2{width:37px;height:15px;background:-webkit-linear-gradient(left,#8080e0 50%,#d4a0e8 50%);background:linear-gradient(to right,#8080e0 50%,#d4a0e8 50%);bottom:23%;right:8%;animation:fpf 10s ease-in-out -3s infinite reverse;transform:rotate(-20deg);}
-.fp3{width:27px;height:11px;background:-webkit-linear-gradient(left,#e87070 50%,#f0c0c0 50%);background:linear-gradient(to right,#e87070 50%,#f0c0c0 50%);top:57%;left:3%;animation:fpf 7s ease-in-out -5s infinite;transform:rotate(10deg);}
+.fp1{width:56px;height:22px;background:linear-gradient(to right,#c87fc8 50%,#f0f0f0 50%);top:19%;left:6%;animation:fpf 8s ease-in-out infinite;transform:rotate(35deg);}
+.fp2{width:37px;height:15px;background:linear-gradient(to right,#8080e0 50%,#d4a0e8 50%);bottom:23%;right:8%;animation:fpf 10s ease-in-out -3s infinite reverse;transform:rotate(-20deg);}
+.fp3{width:27px;height:11px;background:linear-gradient(to right,#e87070 50%,#f0c0c0 50%);top:57%;left:3%;animation:fpf 7s ease-in-out -5s infinite;transform:rotate(10deg);}
 @keyframes fpf{0%,100%{transform:translateY(0) rotate(35deg);}50%{transform:translateY(-17px) rotate(35deg);}}
 
 /* FOOTER */
 footer{position:relative;z-index:1;border-top:1px solid rgba(180,80,200,0.1);padding:26px 40px;display:flex;justify-content:space-between;align-items:center;}
-.ft-logo{font-family:‘Zen Old Mincho’,serif;font-size:0.8rem;letter-spacing:0.3em;color:#6050a0;}
-.ft-copy{font-family:‘Space Mono’,monospace;font-size:0.54rem;color:#3c2c5e;letter-spacing:0.1em;}
+.ft-logo{font-family:'Zen Old Mincho',serif;font-size:0.8rem;letter-spacing:0.3em;color:#6050a0;}
+.ft-copy{font-family:'Space Mono',monospace;font-size:0.54rem;color:#3c2c5e;letter-spacing:0.1em;}
 
 /* REVEAL */
 .rv{opacity:0;transform:translateY(22px);transition:opacity 0.8s ease,transform 0.8s ease;}
@@ -300,13 +293,13 @@ max-width:900px;margin:0 auto;
 padding:28px 40px 8px;
 }
 .ql-label{
-font-family:‘Space Mono’,monospace;font-size:0.52rem;
+font-family:'Space Mono',monospace;font-size:0.52rem;
 letter-spacing:0.28em;text-transform:uppercase;
 color:#6040a0;margin-bottom:16px;
 display:flex;align-items:center;gap:10px;
 }
-.ql-label::before{content:’’;display:block;width:22px;height:1px;background:rgba(120,60,180,0.4);}
-.ql-label::after{content:’’;display:block;flex:1;height:1px;background:-webkit-linear-gradient(left,rgba(120,60,180,0.3),rgba(120,60,180,0));background:linear-gradient(to right,rgba(120,60,180,0.3),rgba(120,60,180,0));}
+.ql-label::before{content:'';display:block;width:22px;height:1px;background:rgba(120,60,180,0.4);}
+.ql-label::after{content:'';display:block;flex:1;height:1px;background:linear-gradient(to right,rgba(120,60,180,0.3),rgba(120,60,180,0));}
 
 .ql-grid{
 display:grid;
@@ -349,11 +342,11 @@ transition:background 0.3s;
 .ql-item-highlight .ql-icon{background:rgba(200,127,200,0.15);}
 
 .ql-name{
-font-family:‘Space Mono’,monospace;font-size:0.56rem;
+font-family:'Space Mono',monospace;font-size:0.56rem;
 letter-spacing:0.06em;color:#c0a0d8;line-height:1.2;
 }
 .ql-sub{
-font-family:‘Space Mono’,monospace;font-size:0.46rem;
+font-family:'Space Mono',monospace;font-size:0.46rem;
 letter-spacing:0.06em;color:#6a5080;line-height:1;
 }
 
@@ -368,7 +361,7 @@ padding:16px 24px;border-radius:12px;
 background:rgba(10,5,25,0.65);
 border:1px solid rgba(180,80,200,0.22);
 backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-font-family:‘Space Mono’,monospace;font-size:0.66rem;
+font-family:'Space Mono',monospace;font-size:0.66rem;
 letter-spacing:0.14em;color:#a080c0;
 transition:all 0.3s ease;
 -webkit-appearance:none;appearance:none;
@@ -397,7 +390,7 @@ backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
 .rtab{
 padding:7px 16px;border-radius:100px;
 background:transparent;border:1px solid rgba(180,80,200,0.2);
-font-family:‘Space Mono’,monospace;font-size:0.58rem;letter-spacing:0.1em;
+font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.1em;
 color:#8060a0;transition:all 0.25s;-webkit-appearance:none;appearance:none;
 }
 .rtab:hover{border-color:rgba(180,80,200,0.45);color:#c090d8;}
@@ -408,13 +401,13 @@ color:#8060a0;transition:all 0.25s;-webkit-appearance:none;appearance:none;
 /* RULE ITEMS */
 .ri{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(180,80,200,0.07);font-size:0.82rem;line-height:1.9;color:#9080a0;}
 .ri:last-child{border-bottom:none;padding-bottom:0;}
-.rim{font-family:‘Space Mono’,monospace;font-size:0.55rem;color:#c87fc8;flex-shrink:0;padding-top:3px;min-width:16px;}
+.rim{font-family:'Space Mono',monospace;font-size:0.55rem;color:#c87fc8;flex-shrink:0;padding-top:3px;min-width:16px;}
 .ri strong{color:#d0a0c8;font-weight:500;}
 
 /* LOVE ITEMS */
 .love-blk{padding:13px 0;border-bottom:1px solid rgba(180,80,200,0.07);}
 .love-blk:last-child{border-bottom:none;padding-bottom:0;}
-.love-h{font-family:‘Zen Old Mincho’,serif;font-size:0.9rem;letter-spacing:0.12em;color:#c898b0;margin-bottom:7px;display:flex;align-items:center;gap:7px;}
+.love-h{font-family:'Zen Old Mincho',serif;font-size:0.9rem;letter-spacing:0.12em;color:#c898b0;margin-bottom:7px;display:flex;align-items:center;gap:7px;}
 .love-hrt{font-size:0.85rem;}
 .love-b{font-size:0.8rem;line-height:2;color:#907080;}
 .love-b strong{color:#c090a0;font-weight:500;}
@@ -422,10 +415,10 @@ color:#8060a0;transition:all 0.25s;-webkit-appearance:none;appearance:none;
 /* SKEB */
 .skeb-intro-r{font-size:0.82rem;line-height:1.9;color:#9080a0;margin-bottom:16px;}
 .skeb-pt{background:rgba(180,80,200,0.06);border:1px solid rgba(180,80,200,0.13);border-radius:9px;padding:13px 16px;margin-bottom:10px;font-size:0.8rem;line-height:1.9;color:#8070a0;}
-.skeb-pt-lbl{font-family:‘Space Mono’,monospace;font-size:0.54rem;letter-spacing:0.14em;color:#c87fc8;margin-bottom:6px;}
+.skeb-pt-lbl{font-family:'Space Mono',monospace;font-size:0.54rem;letter-spacing:0.14em;color:#c87fc8;margin-bottom:6px;}
 .skeb-pt strong{color:#c090c0;font-weight:500;}
-.skeb-tpl{background:rgba(5,3,15,0.65);border:1px solid rgba(180,80,200,0.17);border-radius:9px;padding:16px 18px;font-family:‘Space Mono’,monospace;font-size:0.66rem;line-height:1.9;color:#706080;white-space:pre-wrap;word-break:break-all;margin-top:14px;}
-.skeb-copy-btn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:7px 16px;border-radius:100px;background:rgba(180,80,200,0.1);border:1px solid rgba(180,80,200,0.28);font-family:‘Space Mono’,monospace;font-size:0.56rem;letter-spacing:0.1em;color:#c87fc8;transition:all 0.3s;-webkit-appearance:none;appearance:none;}
+.skeb-tpl{background:rgba(5,3,15,0.65);border:1px solid rgba(180,80,200,0.17);border-radius:9px;padding:16px 18px;font-family:'Space Mono',monospace;font-size:0.66rem;line-height:1.9;color:#706080;white-space:pre-wrap;word-break:break-all;margin-top:14px;}
+.skeb-copy-btn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:7px 16px;border-radius:100px;background:rgba(180,80,200,0.1);border:1px solid rgba(180,80,200,0.28);font-family:'Space Mono',monospace;font-size:0.56rem;letter-spacing:0.1em;color:#c87fc8;transition:all 0.3s;-webkit-appearance:none;appearance:none;}
 .skeb-copy-btn:hover{background:rgba(180,80,200,0.2);border-color:rgba(180,80,200,0.55);color:#e0a0f0;}
 
 /* ===== QUICK LINKS BAR ===== */
@@ -443,16 +436,15 @@ padding:20px 28px;
 position:relative;overflow:hidden;
 }
 .ql-inner::before{
-content:’’;position:absolute;top:0;left:0;right:0;height:1px;
-background:-webkit-linear-gradient(left,rgba(180,80,200,0),rgba(180,80,200,0.5),rgba(180,80,200,0));
+content:'';position:absolute;top:0;left:0;right:0;height:1px;
 background:linear-gradient(to right,rgba(180,80,200,0),rgba(180,80,200,0.5),rgba(180,80,200,0));
 }
 .ql-label{
-font-family:‘Space Mono’,monospace;font-size:0.5rem;
+font-family:'Space Mono',monospace;font-size:0.5rem;
 letter-spacing:0.28em;text-transform:uppercase;color:#6040a0;
 margin-bottom:14px;display:flex;align-items:center;gap:8px;
 }
-.ql-label::before{content:’’;width:20px;height:1px;background:rgba(144,96,184,0.5);display:block;}
+.ql-label::before{content:'';width:20px;height:1px;background:rgba(144,96,184,0.5);display:block;}
 .ql-grid{
 display:grid;
 grid-template-columns:repeat(4,1fr);
@@ -469,8 +461,7 @@ position:relative;
 overflow:hidden;
 }
 .ql-item::after{
-content:’’;position:absolute;inset:0;
-background:-webkit-linear-gradient(top,rgba(180,80,200,0.06),rgba(180,80,200,0));
+content:'';position:absolute;inset:0;
 background:linear-gradient(to bottom,rgba(180,80,200,0.06),rgba(180,80,200,0));
 opacity:0;transition:opacity 0.3s;
 }
@@ -492,21 +483,20 @@ transition:background 0.3s;
 }
 .ql-item:hover .ql-icon{background:rgba(180,80,200,0.22);}
 .ql-name{
-font-family:‘Space Mono’,monospace;font-size:0.58rem;
+font-family:'Space Mono',monospace;font-size:0.58rem;
 letter-spacing:0.08em;color:#c0a0d8;text-align:center;
 position:relative;z-index:1;line-height:1.4;
 }
 .ql-sub{
-font-family:‘Space Mono’,monospace;font-size:0.48rem;
+font-family:'Space Mono',monospace;font-size:0.48rem;
 letter-spacing:0.06em;color:#7058a0;text-align:center;
 position:relative;z-index:1;
 }
-/* 警告バッジ */
 .ql-warn{
 position:absolute;top:6px;right:6px;
 background:rgba(200,80,80,0.2);border:1px solid rgba(200,80,80,0.35);
 border-radius:4px;padding:1px 5px;
-font-family:‘Space Mono’,monospace;font-size:0.42rem;
+font-family:'Space Mono',monospace;font-size:0.42rem;
 color:#e09090;letter-spacing:0.05em;z-index:2;
 }
 
@@ -518,11 +508,6 @@ color:#e09090;letter-spacing:0.05em;z-index:2;
 .ql-name{font-size:0.5rem;}
 .ql-sub{display:none;}
 .ql-inner{padding:16px 16px;}
-}
-@media(max-width:400px){
-.ql-grid{grid-template-columns:repeat(4,1fr);gap:5px;}
-.ql-name{font-size:0.45rem;}
-}
 nav{padding:12px 18px;}
 .nav-l .nav-a:nth-child(2),.nav-r .nav-a:nth-child(1){display:none;}
 .hero-inner{grid-template-columns:1fr;padding:86px 22px 40px;text-align:center;}
@@ -552,13 +537,15 @@ nav{padding:12px 18px;}
 .rtab{font-size:0.54rem;padding:6px 12px;}
 footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 }
+@media(max-width:400px){
+.ql-grid{grid-template-columns:repeat(4,1fr);gap:5px;}
+.ql-name{font-size:0.45rem;}
+}
 </style>
-
 </head>
 <body>
 
 <!-- LOADER -->
-
 <div id="loader">
   <div class="ld-name">Re-ka</div>
   <div class="ld-bag-wrap">
@@ -571,26 +558,21 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 </div>
 
 <!-- TOAST -->
-
 <div class="toast" id="toast">✦ 研究資料へのアクセスを確認しています…</div>
 
 <!-- STARFIELD -->
-
 <div class="starfield" id="sf"></div>
 
 <!-- FLOATING PILLS -->
-
 <div class="fp fp1"></div><div class="fp fp2"></div><div class="fp fp3"></div>
 
 <!-- DRIP DECO -->
-
 <div class="ddeco">
   <div class="ddeco-b"><span class="ddeco-bl">Rk</span></div>
   <div class="ddeco-t"><div class="ddeco-d"></div></div>
 </div>
 
 <!-- NAV -->
-
 <nav>
   <div class="nav-l">
     <a href="#about" class="nav-a">処方箋</a>
@@ -604,7 +586,6 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 </nav>
 
 <!-- HERO -->
-
 <section class="hero">
   <div class="hero-bg"></div>
   <div class="neb n1"></div><div class="neb n2"></div><div class="neb n3"></div>
@@ -622,9 +603,8 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
     </div>
     <div class="himg">
       <div class="gring gr1"></div><div class="gring gr2"></div>
-      <!-- ★ ロゴを3秒長押しで研究資料ページへ -->
       <div class="strig" id="strig">
-        <img src="背景透過 - れーか" alt="Re-ka" class="hchar">
+        <img src="背景透過 - れーか.png" alt="Re-ka" class="hchar">
         <div class="sprog" id="sprog"><div class="sprog-bar" id="sbar"></div></div>
       </div>
       <div class="rxf">
@@ -638,74 +618,62 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 </section>
 
 <!-- ===== QUICK LINKS BAR ===== -->
-
 <div class="ql-section rv">
-  <div class="ql-label">CHANNELS & LINKS</div>
+  <div class="ql-label">CHANNELS &amp; LINKS</div>
   <div class="ql-grid">
-
-```
-<a href="https://x.gd/1789O" target="_blank" rel="noopener" class="ql-item">
-  <div class="ql-icon">📡</div>
-  <div class="ql-name">ミラティブ</div>
-  <div class="ql-sub">配信</div>
-</a>
-
-<a href="https://www.youtube.com/@000re_ka" target="_blank" rel="noopener" class="ql-item">
-  <div class="ql-icon">▶</div>
-  <div class="ql-name">YouTube</div>
-  <div class="ql-sub">投稿</div>
-</a>
-
-<a href="https://www.tiktok.com/@000_reka" target="_blank" rel="noopener" class="ql-item">
-  <div class="ql-icon">♪</div>
-  <div class="ql-name">TikTok</div>
-  <div class="ql-sub">投稿</div>
-</a>
-
-<a href="https://twitter.com/xreeekax" target="_blank" rel="noopener" class="ql-item">
-  <div class="ql-icon">𝕏</div>
-  <div class="ql-name">活動用 X</div>
-  <div class="ql-sub">V活動</div>
-</a>
-
-<a href="https://twitter.com/000_reka" target="_blank" rel="noopener" class="ql-item ql-item-caution">
-  <div class="ql-icon">🔒</div>
-  <div class="ql-name">日常用</div>
-  <div class="ql-sub">鍵垢</div>
-</a>
-
-<a href="https://discord.gg/4h3ECCtwTJ" target="_blank" rel="noopener" class="ql-item ql-item-accent">
-  <div class="ql-icon">💬</div>
-  <div class="ql-name">Discord</div>
-  <div class="ql-sub">ファンサーバー</div>
-</a>
-
-<a href="https://www.amazon.jp/hz/wishlist/ls/1FEWWIE68W5HM?ref_=wl_share" target="_blank" rel="noopener" class="ql-item">
-  <div class="ql-icon">🎁</div>
-  <div class="ql-name">ほしりす</div>
-  <div class="ql-sub">プレゼント</div>
-</a>
-
-<a href="https://lit.link/Reeeka000" target="_blank" rel="noopener" class="ql-item ql-item-highlight">
-  <div class="ql-icon">✦</div>
-  <div class="ql-name">有償依頼</div>
-  <div class="ql-sub">受付中</div>
-</a>
-```
-
+    <a href="https://x.gd/1789O" target="_blank" rel="noopener" class="ql-item">
+      <div class="ql-icon">📡</div>
+      <div class="ql-name">ミラティブ</div>
+      <div class="ql-sub">配信</div>
+    </a>
+    <a href="https://www.youtube.com/@000re_ka" target="_blank" rel="noopener" class="ql-item">
+      <div class="ql-icon">▶</div>
+      <div class="ql-name">YouTube</div>
+      <div class="ql-sub">投稿</div>
+    </a>
+    <a href="https://www.tiktok.com/@000_reka" target="_blank" rel="noopener" class="ql-item">
+      <div class="ql-icon">♪</div>
+      <div class="ql-name">TikTok</div>
+      <div class="ql-sub">投稿</div>
+    </a>
+    <a href="https://twitter.com/xreeekax" target="_blank" rel="noopener" class="ql-item">
+      <div class="ql-icon">𝕏</div>
+      <div class="ql-name">活動用 X</div>
+      <div class="ql-sub">V活動</div>
+    </a>
+    <a href="https://twitter.com/000_reka" target="_blank" rel="noopener" class="ql-item ql-item-caution">
+      <div class="ql-icon">🔒</div>
+      <div class="ql-name">日常用</div>
+      <div class="ql-sub">鍵垢</div>
+    </a>
+    <a href="https://discord.gg/4h3ECCtwTJ" target="_blank" rel="noopener" class="ql-item ql-item-accent">
+      <div class="ql-icon">💬</div>
+      <div class="ql-name">Discord</div>
+      <div class="ql-sub">ファンサーバー</div>
+    </a>
+    <a href="https://www.amazon.jp/hz/wishlist/ls/1FEWWIE68W5HM?ref_=wl_share" target="_blank" rel="noopener" class="ql-item">
+      <div class="ql-icon">🎁</div>
+      <div class="ql-name">ほしりす</div>
+      <div class="ql-sub">プレゼント</div>
+    </a>
+    <a href="https://lit.link/Reeeka000" target="_blank" rel="noopener" class="ql-item ql-item-highlight">
+      <div class="ql-icon">✦</div>
+      <div class="ql-name">有償依頼</div>
+      <div class="ql-sub">受付中</div>
+    </a>
   </div>
 </div>
 
 <div class="ddiv"><div class="dline"></div><div class="dcirc"></div></div>
 
 <!-- ABOUT -->
-
 <section class="sec" id="about">
   <div class="sec-lbl">PRESCRIPTION</div>
   <h2 class="sec-ttl">処方箋</h2>
   <div class="about-g">
     <div class="about-lw rv">
-      <img src="偲睡れーか様_logo - れーか" alt="Re-ka Logo" class="about-logo">
+      <!-- ★ ロゴ画像を新しいファイルに差し替え -->
+      <img src="偲睡れーか様_logo_-_れーか.png" alt="Re-ka Logo" class="about-logo">
     </div>
     <div class="rv d1">
       <p class="about-txt">銀河のはしっこで生まれた
@@ -730,15 +698,13 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 
 必要なとき、
 あなたの隣に、<em>静かに置いてもらえたら</em>。</p>
-</div>
-
+    </div>
   </div>
 </section>
 
 <div class="csep rv"><div class="csl"></div><span class="csi">✦ ✦ ✦</span><div class="csr"></div></div>
 
 <!-- PRESCRIPTION CARD -->
-
 <div class="pc-wrap">
   <div class="pc rv">
     <div class="pc-head">
@@ -760,7 +726,6 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 </div>
 
 <!-- ===== COLLAPSIBLE: 注意事項 ===== -->
-
 <div class="rules-wrap rv" id="rulesWrap">
   <button class="rules-toggle" id="rulesToggle" aria-expanded="false" aria-controls="rulesBody">
     <span class="rules-toggle-left">
@@ -771,51 +736,45 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
   </button>
   <div class="rules-body" id="rulesBody" aria-hidden="true">
     <div class="rules-inner">
-
-```
-  <!-- TAB NAV -->
-  <div class="rules-tabs">
-    <button class="rtab active" data-tab="rules">◾ ルール</button>
-    <button class="rtab" data-tab="fans">💜 偲民へ</button>
-    <button class="rtab" data-tab="skeb">✍ skeb依頼</button>
-  </div>
-
-  <!-- TAB: RULES -->
-  <div class="rtab-content active" id="tab-rules">
-    <div class="ri"><span class="rim">◾</span><span>話題に出ていない配信者さんの名前を出さないこと。</span></div>
-    <div class="ri"><span class="rim">◾</span><span>他枠で、話題に出ていないのに私の名前を出さないこと。</span></div>
-    <div class="ri"><span class="rim">◾</span><span>チャンネル内のイラスト／ロゴ／立ち絵などの<strong>無断使用・転載・AI学習禁止</strong>。（SNSアイコン利用、無許可のグッズ化含む）必ずクリエイター様への敬意を忘れないでください。</span></div>
-    <div class="ri"><span class="rim">◾</span><span>配信スクショのタグ投稿は可。Xへ掲載する場合は<strong>Grokの学習設定をオフ</strong>にしてください。</span></div>
-    <div class="ri"><span class="rim">◾</span><span><strong>コンテンツの個人利用</strong> — 有償依頼をしてれーかのイラスト等を依頼することも可ですが、使用はれーか本人の使用または依頼主の個人利用の範囲でお願いします。迷った場合は必ず事前にご相談ください。</span></div>
-    <div class="ri"><span class="rim">◾</span><span>場の空気を乱すコメント、差別的発言、過度なセクハラ、求めていない批評やアドバイスはお控えください。原則、私が拾いたいコメントを拾います。</span></div>
-    <div class="ri"><span class="rim">◾</span><span>配信の進行を妨げる行為は禁止です。「DM見て」など配信外でのやり取りを求める発言や、突然話題を遮って過度な自語りに持ち込む行為はお控えください。みんなで楽しむ空間であることをご理解ください。</span></div>
-    <div class="ri"><span class="rim">◾</span><span>ゲーム・雑談中の過度な指示や進行のコントロールはお控えください。アドバイスが欲しい場合はこちらから求めます。</span></div>
-    <div class="ri"><span class="rim">◾</span><span>「○○知ってるよね？」など<strong>内輪感を強める発言</strong>はお控えください。初見さんも安心できる空気作りにご協力ください。</span></div>
-    <div class="ri"><span class="rim">◾</span><span>配信内外問わず、過度な独占・特別扱いを求める発言はお控えください。健全で心地よい距離感を大切にしています。</span></div>
-    <div class="ri"><span class="rim">◾</span><span>アンチや荒らしは私／モデレーター／事務所が対応します。<strong>深追い禁止。スルーでお願いします。</strong></span></div>
-    <div class="ri"><span class="rim">◾</span><span>プライバシーに関する質問（居住地、年齢、人間関係など）は控えてください。私が触れている範囲のみでお願いします。</span></div>
-    <div class="ri"><span class="rim">◾</span><span>DMやリプライは、ご依頼・案件以外は返信できるもののみ対応します。ルールを守れない場合はブロック等の対応を行います。</span></div>
-  </div>
-
-  <!-- TAB: FANS -->
-  <div class="rtab-content" id="tab-fans">
-    <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>Xでの反応について</div><div class="love-b">いいね・RP・リプライとても嬉しいです。リプライは余裕のあるときにお返ししています。交流があると認知もしやすいので、たくさんお話してくれたら嬉しいです。通知勢も歓迎です。<br><strong>※他の方との会話へのいいねはご遠慮ください。</strong><br><strong>#れーかのたまりば</strong> での感想ポストもお待ちしています。</div></div>
-    <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>配信について</div><div class="love-b">ROMも大歓迎。顔を出してくれるだけで嬉しいです。コメントはもっと嬉しいです。イベント参加中やランクキープ中は、ギフトでの応援がとても力になります。投げられないときも、無料コインやコメント、企画参加など、それぞれの形で想いを届けてくれたら嬉しいです。</div></div>
-    <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>動画への反応</div><div class="love-b">再生・高評価・コメントは大きな力になります。私ひとりでは伸びません。<strong>一緒に育ててもらえたら嬉しいです。</strong></div></div>
-    <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>プレゼント</div><div class="love-b">ほしい物リストやイラストの贈り物は大きな励みになります。無理のない範囲でお願いします。</div></div>
-    <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>マイペースについて</div><div class="love-b">ときどきお休みします。そのときは静かに待っていてくれたら嬉しいです。目標は一緒に喜び、悔しさも分け合えたら。</div></div>
-    <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>少しだけ大切なお願い</div><div class="love-b">「誰かがやってくれる」ではなく、<strong>あなたの気持ちをください。</strong><br>私の推しマは、タトゥーと同じくらい重いものです。重くて寂しがりな私を、ひとりにしないでくれたら嬉しいです。<br><br>お別れの際はブロックでお願いします。みんなと、末永くいられますように。</div></div>
-  </div>
-
-  <!-- TAB: SKEB -->
-  <div class="rtab-content" id="tab-skeb">
-    <p class="skeb-intro-r">私のイラスト等をskebや各コミッションサイトで依頼をすることを偲睡れーかは許可しています。必ずクリエイターさんに対して失礼の無いようお願いします。</p>
-    <div class="skeb-pt"><div class="skeb-pt-lbl">◾ POINT 01 — 活動上での使用許可</div>偲睡れーかの活動上での使用の許可を貰ってください。<br><strong>非商用</strong> ▶ おはツイ・サムネ・アイコン等 ／ <strong>商用込</strong> ▶ グッズ化・返礼品・案件利用など<br>絵師さんの金額より上乗せで依頼すると差分や商用利用など通りやすいです。</div>
-    <div class="skeb-pt"><div class="skeb-pt-lbl">◾ POINT 02 — 構図</div>頭周辺が見切れない構図であること（できれば）</div>
-    <div class="skeb-pt"><div class="skeb-pt-lbl">◾ POINT 03 — キャラクター識別</div>目の色、髪色、薬の髪留めは最低限欲しいかも。服装・構図・シチュエーションは依頼主にお任せします！<br>R-18は「特定の相手がいる描写NG」「センシティブ設定付き投稿」をお守りください。夢絵OK！</div>
-    <p style="font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.12em;color:#c87fc8;margin:20px 0 8px;">— skeb用テンプレート —</p>
-    <div class="skeb-tpl" id="skebTpl">はじめまして、〇〇と申します。
-```
+      <!-- TAB NAV -->
+      <div class="rules-tabs">
+        <button class="rtab active" data-tab="rules">◾ ルール</button>
+        <button class="rtab" data-tab="fans">💜 偲民へ</button>
+        <button class="rtab" data-tab="skeb">✍ skeb依頼</button>
+      </div>
+      <!-- TAB: RULES -->
+      <div class="rtab-content active" id="tab-rules">
+        <div class="ri"><span class="rim">◾</span><span>話題に出ていない配信者さんの名前を出さないこと。</span></div>
+        <div class="ri"><span class="rim">◾</span><span>他枠で、話題に出ていないのに私の名前を出さないこと。</span></div>
+        <div class="ri"><span class="rim">◾</span><span>チャンネル内のイラスト／ロゴ／立ち絵などの<strong>無断使用・転載・AI学習禁止</strong>。（SNSアイコン利用、無許可のグッズ化含む）必ずクリエイター様への敬意を忘れないでください。</span></div>
+        <div class="ri"><span class="rim">◾</span><span>配信スクショのタグ投稿は可。Xへ掲載する場合は<strong>Grokの学習設定をオフ</strong>にしてください。</span></div>
+        <div class="ri"><span class="rim">◾</span><span><strong>コンテンツの個人利用</strong> — 有償依頼をしてれーかのイラスト等を依頼することも可ですが、使用はれーか本人の使用または依頼主の個人利用の範囲でお願いします。迷った場合は必ず事前にご相談ください。</span></div>
+        <div class="ri"><span class="rim">◾</span><span>場の空気を乱すコメント、差別的発言、過度なセクハラ、求めていない批評やアドバイスはお控えください。原則、私が拾いたいコメントを拾います。</span></div>
+        <div class="ri"><span class="rim">◾</span><span>配信の進行を妨げる行為は禁止です。「DM見て」など配信外でのやり取りを求める発言や、突然話題を遮って過度な自語りに持ち込む行為はお控えください。みんなで楽しむ空間であることをご理解ください。</span></div>
+        <div class="ri"><span class="rim">◾</span><span>ゲーム・雑談中の過度な指示や進行のコントロールはお控えください。アドバイスが欲しい場合はこちらから求めます。</span></div>
+        <div class="ri"><span class="rim">◾</span><span>「○○知ってるよね？」など<strong>内輪感を強める発言</strong>はお控えください。初見さんも安心できる空気作りにご協力ください。</span></div>
+        <div class="ri"><span class="rim">◾</span><span>配信内外問わず、過度な独占・特別扱いを求める発言はお控えください。健全で心地よい距離感を大切にしています。</span></div>
+        <div class="ri"><span class="rim">◾</span><span>アンチや荒らしは私／モデレーター／事務所が対応します。<strong>深追い禁止。スルーでお願いします。</strong></span></div>
+        <div class="ri"><span class="rim">◾</span><span>プライバシーに関する質問（居住地、年齢、人間関係など）は控えてください。私が触れている範囲のみでお願いします。</span></div>
+        <div class="ri"><span class="rim">◾</span><span>DMやリプライは、ご依頼・案件以外は返信できるもののみ対応します。ルールを守れない場合はブロック等の対応を行います。</span></div>
+      </div>
+      <!-- TAB: FANS -->
+      <div class="rtab-content" id="tab-fans">
+        <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>Xでの反応について</div><div class="love-b">いいね・RP・リプライとても嬉しいです。リプライは余裕のあるときにお返ししています。交流があると認知もしやすいので、たくさんお話してくれたら嬉しいです。通知勢も歓迎です。<br><strong>※他の方との会話へのいいねはご遠慮ください。</strong><br><strong>#れーかのたまりば</strong> での感想ポストもお待ちしています。</div></div>
+        <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>配信について</div><div class="love-b">ROMも大歓迎。顔を出してくれるだけで嬉しいです。コメントはもっと嬉しいです。イベント参加中やランクキープ中は、ギフトでの応援がとても力になります。投げられないときも、無料コインやコメント、企画参加など、それぞれの形で想いを届けてくれたら嬉しいです。</div></div>
+        <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>動画への反応</div><div class="love-b">再生・高評価・コメントは大きな力になります。私ひとりでは伸びません。<strong>一緒に育ててもらえたら嬉しいです。</strong></div></div>
+        <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>プレゼント</div><div class="love-b">ほしい物リストやイラストの贈り物は大きな励みになります。無理のない範囲でお願いします。</div></div>
+        <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>マイペースについて</div><div class="love-b">ときどきお休みします。そのときは静かに待っていてくれたら嬉しいです。目標は一緒に喜び、悔しさも分け合えたら。</div></div>
+        <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>少しだけ大切なお願い</div><div class="love-b">「誰かがやってくれる」ではなく、<strong>あなたの気持ちをください。</strong><br>私の推しマは、タトゥーと同じくらい重いものです。重くて寂しがりな私を、ひとりにしないでくれたら嬉しいです。<br><br>お別れの際はブロックでお願いします。みんなと、末永くいられますように。</div></div>
+      </div>
+      <!-- TAB: SKEB -->
+      <div class="rtab-content" id="tab-skeb">
+        <p class="skeb-intro-r">私のイラスト等をskebや各コミッションサイトで依頼をすることを偲睡れーかは許可しています。必ずクリエイターさんに対して失礼の無いようお願いします。</p>
+        <div class="skeb-pt"><div class="skeb-pt-lbl">◾ POINT 01 — 活動上での使用許可</div>偲睡れーかの活動上での使用の許可を貰ってください。<br><strong>非商用</strong> ▶ おはツイ・サムネ・アイコン等 ／ <strong>商用込</strong> ▶ グッズ化・返礼品・案件利用など<br>絵師さんの金額より上乗せで依頼すると差分や商用利用など通りやすいです。</div>
+        <div class="skeb-pt"><div class="skeb-pt-lbl">◾ POINT 02 — 構図</div>頭周辺が見切れない構図であること（できれば）</div>
+        <div class="skeb-pt"><div class="skeb-pt-lbl">◾ POINT 03 — キャラクター識別</div>目の色、髪色、薬の髪留めは最低限欲しいかも。服装・構図・シチュエーションは依頼主にお任せします！<br>R-18は「特定の相手がいる描写NG」「センシティブ設定付き投稿」をお守りください。夢絵OK！</div>
+        <p style="font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.12em;color:#c87fc8;margin:20px 0 8px;">— skeb用テンプレート —</p>
+        <div class="skeb-tpl" id="skebTpl">はじめまして、〇〇と申します。
 
 作品を拝見しとても素敵だと感じ、ぜひイラストをお願いしたくリクエストさせていただきました。
 VTuber「偲睡れーか」のファンアート制作のご依頼です。
@@ -843,52 +802,41 @@ VTuber「偲睡れーか」のファンアート制作のご依頼です。
 【その他】
 ・NG表現などございましたらご自由に調整ください
 ご検討よろしくお願いいたします。</div>
-<button class="skeb-copy-btn" onclick="copySkebTpl()">📋 テンプレートをコピー</button>
-</div>
-
-```
-</div><!-- /.rules-inner -->
-```
-
+        <button class="skeb-copy-btn" onclick="copySkebTpl()">📋 テンプレートをコピー</button>
+      </div>
+    </div><!-- /.rules-inner -->
   </div><!-- /.rules-body -->
 </div><!-- /.rules-wrap -->
 
 <!-- anchor for nav -->
-
 <div id="media"></div>
 
 <!-- YOUTUBE -->
-
 <div class="yt-sec">
   <div class="sec-lbl">MUSIC</div>
   <h2 class="sec-ttl">歌みた</h2>
   <div class="yt-g">
-    <!--
-      ★★★ YouTube動画の埋め込み方 ★★★
-      1. YouTubeで動画を開く
-      2. URLの「watch?v=XXXXX」の XXXXX が動画ID
-      3. 下のsrc="https://www.youtube.com/embed/XXXXX" の XXXXX に貼り替える
-    -->
+    <!-- ① モエチャッカファイア -->
     <div class="yt-it yt-full rv">
-      <iframe src="https://youtu.be/ut5lFekIkhc?si=osprxM426qxdW-mN" title="Re-ka Music 01" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/ut5lFekIkhc" title="Re-ka Music 01" allowfullscreen loading="lazy"></iframe>
       <div class="yt-lbl">▷ FEATURED SONG</div>
     </div>
+    <!-- ② 誇り高きアイドル -->
     <div class="yt-it rv d1">
-      <iframe src="https://youtu.be/q_Rr6--xsxE?si=IoQ9cd2InQR6wPa5" title="Re-ka Music 02" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/q_Rr6--xsxE" title="Re-ka Music 02" allowfullscreen loading="lazy"></iframe>
       <div class="yt-lbl">▷ SONG 02</div>
     </div>
+    <!-- ③ ディア -->
     <div class="yt-it rv d2">
-      <iframe src="https://youtu.be/83kiu4VjKJ0?si=N8ls7bC9mbHHww3-" title="Re-ka Music 03" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/83kiu4VjKJ0" title="Re-ka Music 03" allowfullscreen loading="lazy"></iframe>
       <div class="yt-lbl">▷ SONG 03</div>
     </div>
   </div>
-  <p class="yt-note">★ 上のsrc属性内の動画IDをご自身のYouTube動画IDに変更してください<br>例: https://www.youtube.com/embed/<strong style="color:#9060b8;">dQw4w9WgXcQ</strong> の太字部分を差し替え</p>
 </div>
 
 <div class="csep rv" style="padding:8px 40px;"><div class="csl"></div><span class="csi">✦</span><div class="csr"></div></div>
 
 <!-- X EMBED -->
-
 <div class="x-sec">
   <div class="sec-lbl">TRANSMISSION</div>
   <h2 class="sec-ttl">ポスト</h2>
@@ -906,7 +854,6 @@ VTuber「偲睡れーか」のファンアート制作のご依頼です。
 <div class="csep rv" style="padding:8px 40px;"><div class="csl"></div><span class="csi">✦</span><div class="csr"></div></div>
 
 <!-- GALLERY -->
-
 <div class="gal-sec" id="gallery">
   <div class="sec-lbl">OBSERVATION ROOM</div>
   <h2 class="sec-ttl">観測室</h2>
@@ -924,59 +871,46 @@ VTuber「偲睡れーか」のファンアート制作のご依頼です。
 <div class="csep rv" style="padding:8px 40px;"><div class="csl"></div><span class="csi">✦ ✦ ✦</span><div class="csr"></div></div>
 
 <!-- LINKS -->
-
 <div class="lnk-sec" id="links">
-  <div class="sec-lbl">CONTACT & LINKS</div>
+  <div class="sec-lbl">CONTACT &amp; LINKS</div>
   <h2 class="sec-ttl">コンタクト</h2>
   <div class="lnk-g">
-
-```
-<a href="https://twitter.com/xreeekax" target="_blank" rel="noopener" class="lnk-c rv">
-  <div class="lnk-ic">𝕏</div>
-  <div><div class="lnk-tt">活動用 X</div><div class="lnk-sb">@xreeekax — V活動</div></div>
-</a>
-
-<a href="https://www.youtube.com/@000re_ka" target="_blank" rel="noopener" class="lnk-c rv d1">
-  <div class="lnk-ic">▶</div>
-  <div><div class="lnk-tt">YouTube</div><div class="lnk-sb">@000re_ka — 歌みた · 投稿</div></div>
-</a>
-
-<a href="https://x.gd/1789O" target="_blank" rel="noopener" class="lnk-c rv">
-  <div class="lnk-ic">📡</div>
-  <div><div class="lnk-tt">ミラティブ</div><div class="lnk-sb">配信 — ほぼ毎日</div></div>
-</a>
-
-<a href="https://www.tiktok.com/@000_reka" target="_blank" rel="noopener" class="lnk-c rv d1">
-  <div class="lnk-ic">♪</div>
-  <div><div class="lnk-tt">TikTok</div><div class="lnk-sb">@000_reka — ストーリー</div></div>
-</a>
-
-<a href="https://discord.gg/4h3ECCtwTJ" target="_blank" rel="noopener" class="lnk-c rv d2">
-  <div class="lnk-ic">💬</div>
-  <div><div class="lnk-tt">Discord</div><div class="lnk-sb">れーかのひみつべや — 承認制</div></div>
-</a>
-
-<a href="https://twitter.com/000_reka" target="_blank" rel="noopener" class="lnk-c rv d2">
-  <div class="lnk-ic">🔒</div>
-  <div><div class="lnk-tt">日常用 鍵垢</div><div class="lnk-sb">@000_reka — ネガティブ注意</div></div>
-</a>
-
-<a href="https://www.amazon.jp/hz/wishlist/ls/1FEWWIE68W5HM?ref_=wl_share" target="_blank" rel="noopener" class="lnk-c rv d3">
-  <div class="lnk-ic">🎁</div>
-  <div><div class="lnk-tt">ほしい物リスト</div><div class="lnk-sb">Amazon — 励みになります</div></div>
-</a>
-
-<a href="https://lit.link/Reeeka000" target="_blank" rel="noopener" class="lnk-c rv d3">
-  <div class="lnk-ic">✦</div>
-  <div><div class="lnk-tt">有償依頼</div><div class="lnk-sb">lit.link/Reeeka000 — 受付中</div></div>
-</a>
-
-<a href="https://lit.link/xreeekax" target="_blank" rel="noopener" class="lnk-c lnk-full rv" style="border-color:rgba(180,80,200,0.38);margin-top:4px;">
-  <div class="lnk-ic">🌌</div>
-  <div><div class="lnk-tt">その他すべてのリンク</div><div class="lnk-sb">lit.link/xreeekax — 全サービスまとめ</div></div>
-</a>
-```
-
+    <a href="https://twitter.com/xreeekax" target="_blank" rel="noopener" class="lnk-c rv">
+      <div class="lnk-ic">𝕏</div>
+      <div><div class="lnk-tt">活動用 X</div><div class="lnk-sb">@xreeekax — V活動</div></div>
+    </a>
+    <a href="https://www.youtube.com/@000re_ka" target="_blank" rel="noopener" class="lnk-c rv d1">
+      <div class="lnk-ic">▶</div>
+      <div><div class="lnk-tt">YouTube</div><div class="lnk-sb">@000re_ka — 歌みた · 投稿</div></div>
+    </a>
+    <a href="https://x.gd/1789O" target="_blank" rel="noopener" class="lnk-c rv">
+      <div class="lnk-ic">📡</div>
+      <div><div class="lnk-tt">ミラティブ</div><div class="lnk-sb">配信 — ほぼ毎日</div></div>
+    </a>
+    <a href="https://www.tiktok.com/@000_reka" target="_blank" rel="noopener" class="lnk-c rv d1">
+      <div class="lnk-ic">♪</div>
+      <div><div class="lnk-tt">TikTok</div><div class="lnk-sb">@000_reka — ストーリー</div></div>
+    </a>
+    <a href="https://discord.gg/4h3ECCtwTJ" target="_blank" rel="noopener" class="lnk-c rv d2">
+      <div class="lnk-ic">💬</div>
+      <div><div class="lnk-tt">Discord</div><div class="lnk-sb">れーかのひみつべや — 承認制</div></div>
+    </a>
+    <a href="https://twitter.com/000_reka" target="_blank" rel="noopener" class="lnk-c rv d2">
+      <div class="lnk-ic">🔒</div>
+      <div><div class="lnk-tt">日常用 鍵垢</div><div class="lnk-sb">@000_reka — ネガティブ注意</div></div>
+    </a>
+    <a href="https://www.amazon.jp/hz/wishlist/ls/1FEWWIE68W5HM?ref_=wl_share" target="_blank" rel="noopener" class="lnk-c rv d3">
+      <div class="lnk-ic">🎁</div>
+      <div><div class="lnk-tt">ほしい物リスト</div><div class="lnk-sb">Amazon — 励みになります</div></div>
+    </a>
+    <a href="https://lit.link/Reeeka000" target="_blank" rel="noopener" class="lnk-c rv d3">
+      <div class="lnk-ic">✦</div>
+      <div><div class="lnk-tt">有償依頼</div><div class="lnk-sb">lit.link/Reeeka000 — 受付中</div></div>
+    </a>
+    <a href="https://lit.link/xreeekax" target="_blank" rel="noopener" class="lnk-c lnk-full rv" style="border-color:rgba(180,80,200,0.38);margin-top:4px;">
+      <div class="lnk-ic">🌌</div>
+      <div><div class="lnk-tt">その他すべてのリンク</div><div class="lnk-sb">lit.link/xreeekax — 全サービスまとめ</div></div>
+    </a>
   </div>
 </div>
 

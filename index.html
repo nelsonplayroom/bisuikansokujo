@@ -293,8 +293,236 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(180,80,200,0.1);pad
 .rv.vis{opacity:1;transform:translateY(0);}
 .d1{transition-delay:0.12s;}.d2{transition-delay:0.24s;}.d3{transition-delay:0.36s;}
 
-/* RESPONSIVE */
+/* ===== QUICK LINK BAR ===== */
+.ql-section{
+position:relative;z-index:1;
+max-width:900px;margin:0 auto;
+padding:28px 40px 8px;
+}
+.ql-label{
+font-family:‘Space Mono’,monospace;font-size:0.52rem;
+letter-spacing:0.28em;text-transform:uppercase;
+color:#6040a0;margin-bottom:16px;
+display:flex;align-items:center;gap:10px;
+}
+.ql-label::before{content:’’;display:block;width:22px;height:1px;background:rgba(120,60,180,0.4);}
+.ql-label::after{content:’’;display:block;flex:1;height:1px;background:-webkit-linear-gradient(left,rgba(120,60,180,0.3),rgba(120,60,180,0));background:linear-gradient(to right,rgba(120,60,180,0.3),rgba(120,60,180,0));}
+
+.ql-grid{
+display:grid;
+grid-template-columns:repeat(8,1fr);
+gap:8px;
+}
+
+.ql-item{
+display:flex;flex-direction:column;align-items:center;
+gap:7px;padding:14px 6px 12px;
+border-radius:14px;
+background:rgba(10,5,25,0.6);
+border:1px solid rgba(180,80,200,0.16);
+backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+transition:all 0.3s ease;
+text-align:center;
+}
+.ql-item:hover{
+background:rgba(180,80,200,0.14);
+border-color:rgba(180,80,200,0.55);
+transform:translateY(-4px);
+box-shadow:0 8px 20px rgba(180,80,200,0.18);
+}
+.ql-item-caution{border-color:rgba(200,160,60,0.18);}
+.ql-item-caution:hover{background:rgba(200,160,60,0.1);border-color:rgba(200,160,60,0.5);box-shadow:0 8px 20px rgba(200,160,60,0.14);}
+.ql-item-accent{border-color:rgba(88,101,242,0.25);}
+.ql-item-accent:hover{background:rgba(88,101,242,0.12);border-color:rgba(88,101,242,0.55);box-shadow:0 8px 20px rgba(88,101,242,0.15);}
+.ql-item-highlight{border-color:rgba(200,127,200,0.3);}
+.ql-item-highlight:hover{background:rgba(200,127,200,0.15);border-color:rgba(200,127,200,0.65);box-shadow:0 8px 20px rgba(200,127,200,0.2);}
+
+.ql-icon{
+font-size:1.25rem;line-height:1;
+width:36px;height:36px;border-radius:10px;
+background:rgba(180,80,200,0.1);
+display:flex;align-items:center;justify-content:center;
+transition:background 0.3s;
+}
+.ql-item-caution .ql-icon{background:rgba(200,160,60,0.1);}
+.ql-item-accent .ql-icon{background:rgba(88,101,242,0.1);}
+.ql-item-highlight .ql-icon{background:rgba(200,127,200,0.15);}
+
+.ql-name{
+font-family:‘Space Mono’,monospace;font-size:0.56rem;
+letter-spacing:0.06em;color:#c0a0d8;line-height:1.2;
+}
+.ql-sub{
+font-family:‘Space Mono’,monospace;font-size:0.46rem;
+letter-spacing:0.06em;color:#6a5080;line-height:1;
+}
+
+/* ===== COLLAPSIBLE RULES ===== */
+.rules-wrap{
+max-width:660px;margin:0 auto 0;padding:0 40px;
+position:relative;z-index:1;
+}
+.rules-toggle{
+width:100%;display:flex;align-items:center;justify-content:space-between;
+padding:16px 24px;border-radius:12px;
+background:rgba(10,5,25,0.65);
+border:1px solid rgba(180,80,200,0.22);
+backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+font-family:‘Space Mono’,monospace;font-size:0.66rem;
+letter-spacing:0.14em;color:#a080c0;
+transition:all 0.3s ease;
+-webkit-appearance:none;appearance:none;
+}
+.rules-toggle:hover{background:rgba(180,80,200,0.1);border-color:rgba(180,80,200,0.5);color:#d0a0e8;}
+.rules-toggle.open{border-radius:12px 12px 0 0;border-color:rgba(180,80,200,0.4);background:rgba(15,8,32,0.85);}
+.rules-toggle-left{display:flex;align-items:center;gap:10px;}
+.rules-toggle-icon{font-size:0.55rem;color:#c87fc8;}
+.rules-toggle-title{font-size:0.65rem;letter-spacing:0.16em;}
+.rules-toggle-arrow{font-size:0.75rem;color:#9060b8;transition:transform 0.35s ease;display:inline-block;}
+.rules-toggle.open .rules-toggle-arrow{transform:rotate(180deg);}
+
+.rules-body{
+max-height:0;overflow:hidden;
+transition:max-height 0.55s ease;
+background:rgba(10,5,25,0.72);
+border:1px solid rgba(180,80,200,0.22);border-top:none;
+border-radius:0 0 12px 12px;
+backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+.rules-body.open{max-height:2000px;}
+.rules-inner{padding:20px 24px 24px;}
+
+/* TABS */
+.rules-tabs{display:flex;gap:8px;margin-bottom:20px;flex-wrap:wrap;}
+.rtab{
+padding:7px 16px;border-radius:100px;
+background:transparent;border:1px solid rgba(180,80,200,0.2);
+font-family:‘Space Mono’,monospace;font-size:0.58rem;letter-spacing:0.1em;
+color:#8060a0;transition:all 0.25s;-webkit-appearance:none;appearance:none;
+}
+.rtab:hover{border-color:rgba(180,80,200,0.45);color:#c090d8;}
+.rtab.active{background:rgba(180,80,200,0.18);border-color:rgba(180,80,200,0.55);color:#d4a0e8;}
+.rtab-content{display:none;}
+.rtab-content.active{display:block;}
+
+/* RULE ITEMS */
+.ri{display:flex;gap:12px;padding:10px 0;border-bottom:1px solid rgba(180,80,200,0.07);font-size:0.82rem;line-height:1.9;color:#9080a0;}
+.ri:last-child{border-bottom:none;padding-bottom:0;}
+.rim{font-family:‘Space Mono’,monospace;font-size:0.55rem;color:#c87fc8;flex-shrink:0;padding-top:3px;min-width:16px;}
+.ri strong{color:#d0a0c8;font-weight:500;}
+
+/* LOVE ITEMS */
+.love-blk{padding:13px 0;border-bottom:1px solid rgba(180,80,200,0.07);}
+.love-blk:last-child{border-bottom:none;padding-bottom:0;}
+.love-h{font-family:‘Zen Old Mincho’,serif;font-size:0.9rem;letter-spacing:0.12em;color:#c898b0;margin-bottom:7px;display:flex;align-items:center;gap:7px;}
+.love-hrt{font-size:0.85rem;}
+.love-b{font-size:0.8rem;line-height:2;color:#907080;}
+.love-b strong{color:#c090a0;font-weight:500;}
+
+/* SKEB */
+.skeb-intro-r{font-size:0.82rem;line-height:1.9;color:#9080a0;margin-bottom:16px;}
+.skeb-pt{background:rgba(180,80,200,0.06);border:1px solid rgba(180,80,200,0.13);border-radius:9px;padding:13px 16px;margin-bottom:10px;font-size:0.8rem;line-height:1.9;color:#8070a0;}
+.skeb-pt-lbl{font-family:‘Space Mono’,monospace;font-size:0.54rem;letter-spacing:0.14em;color:#c87fc8;margin-bottom:6px;}
+.skeb-pt strong{color:#c090c0;font-weight:500;}
+.skeb-tpl{background:rgba(5,3,15,0.65);border:1px solid rgba(180,80,200,0.17);border-radius:9px;padding:16px 18px;font-family:‘Space Mono’,monospace;font-size:0.66rem;line-height:1.9;color:#706080;white-space:pre-wrap;word-break:break-all;margin-top:14px;}
+.skeb-copy-btn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:7px 16px;border-radius:100px;background:rgba(180,80,200,0.1);border:1px solid rgba(180,80,200,0.28);font-family:‘Space Mono’,monospace;font-size:0.56rem;letter-spacing:0.1em;color:#c87fc8;transition:all 0.3s;-webkit-appearance:none;appearance:none;}
+.skeb-copy-btn:hover{background:rgba(180,80,200,0.2);border-color:rgba(180,80,200,0.55);color:#e0a0f0;}
+
+/* ===== QUICK LINKS BAR ===== */
+.ql-wrap{
+position:relative;z-index:1;
+padding:0 40px;
+max-width:1000px;margin:0 auto;
+}
+.ql-inner{
+background:rgba(10,5,25,0.7);
+border:1px solid rgba(180,80,200,0.2);
+border-radius:16px;
+backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+padding:20px 28px;
+position:relative;overflow:hidden;
+}
+.ql-inner::before{
+content:’’;position:absolute;top:0;left:0;right:0;height:1px;
+background:-webkit-linear-gradient(left,rgba(180,80,200,0),rgba(180,80,200,0.5),rgba(180,80,200,0));
+background:linear-gradient(to right,rgba(180,80,200,0),rgba(180,80,200,0.5),rgba(180,80,200,0));
+}
+.ql-label{
+font-family:‘Space Mono’,monospace;font-size:0.5rem;
+letter-spacing:0.28em;text-transform:uppercase;color:#6040a0;
+margin-bottom:14px;display:flex;align-items:center;gap:8px;
+}
+.ql-label::before{content:’’;width:20px;height:1px;background:rgba(144,96,184,0.5);display:block;}
+.ql-grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
+}
+.ql-item{
+display:flex;flex-direction:column;align-items:center;gap:8px;
+padding:14px 10px 12px;
+border-radius:12px;
+background:rgba(180,80,200,0.05);
+border:1px solid rgba(180,80,200,0.12);
+transition:all 0.3s ease;
+position:relative;
+overflow:hidden;
+}
+.ql-item::after{
+content:’’;position:absolute;inset:0;
+background:-webkit-linear-gradient(top,rgba(180,80,200,0.06),rgba(180,80,200,0));
+background:linear-gradient(to bottom,rgba(180,80,200,0.06),rgba(180,80,200,0));
+opacity:0;transition:opacity 0.3s;
+}
+.ql-item:hover{
+background:rgba(180,80,200,0.13);
+border-color:rgba(180,80,200,0.45);
+transform:translateY(-3px);
+box-shadow:0 8px 20px rgba(180,80,200,0.15);
+}
+.ql-item:hover::after{opacity:1;}
+.ql-icon{
+font-size:1.15rem;
+width:36px;height:36px;
+border-radius:10px;
+background:rgba(180,80,200,0.1);
+display:flex;align-items:center;justify-content:center;
+flex-shrink:0;position:relative;z-index:1;
+transition:background 0.3s;
+}
+.ql-item:hover .ql-icon{background:rgba(180,80,200,0.22);}
+.ql-name{
+font-family:‘Space Mono’,monospace;font-size:0.58rem;
+letter-spacing:0.08em;color:#c0a0d8;text-align:center;
+position:relative;z-index:1;line-height:1.4;
+}
+.ql-sub{
+font-family:‘Space Mono’,monospace;font-size:0.48rem;
+letter-spacing:0.06em;color:#7058a0;text-align:center;
+position:relative;z-index:1;
+}
+/* 警告バッジ */
+.ql-warn{
+position:absolute;top:6px;right:6px;
+background:rgba(200,80,80,0.2);border:1px solid rgba(200,80,80,0.35);
+border-radius:4px;padding:1px 5px;
+font-family:‘Space Mono’,monospace;font-size:0.42rem;
+color:#e09090;letter-spacing:0.05em;z-index:2;
+}
+
 @media(max-width:768px){
+.ql-wrap{padding-left:20px;padding-right:20px;}
+.ql-grid{grid-template-columns:repeat(4,1fr);gap:7px;}
+.ql-item{padding:10px 6px 9px;border-radius:10px;}
+.ql-icon{width:28px;height:28px;font-size:0.95rem;border-radius:8px;}
+.ql-name{font-size:0.5rem;}
+.ql-sub{display:none;}
+.ql-inner{padding:16px 16px;}
+}
+@media(max-width:400px){
+.ql-grid{grid-template-columns:repeat(4,1fr);gap:5px;}
+.ql-name{font-size:0.45rem;}
+}
 nav{padding:12px 18px;}
 .nav-l .nav-a:nth-child(2),.nav-r .nav-a:nth-child(1){display:none;}
 .hero-inner{grid-template-columns:1fr;padding:86px 22px 40px;text-align:center;}
@@ -313,7 +541,15 @@ nav{padding:12px 18px;}
 .lnk-g{grid-template-columns:1fr;}
 .lnk-full{grid-column:span 1;}
 .ddeco,.fp1,.fp2,.fp3{display:none;}
-.sec,.yt-sec,.gal-sec,.lnk-sec,.x-sec,.pc-wrap{padding-left:20px;padding-right:20px;}
+.sec,.yt-sec,.gal-sec,.lnk-sec,.x-sec,.pc-wrap,.rules-wrap,.ql-section{padding-left:20px;padding-right:20px;}
+.ql-grid{grid-template-columns:repeat(4,1fr);gap:7px;}
+.ql-icon{width:30px;height:30px;font-size:1rem;}
+.ql-name{font-size:0.5rem;}
+.ql-sub{font-size:0.42rem;}
+.ql-item{padding:11px 4px 10px;border-radius:11px;}
+.rules-inner{padding:16px 16px 20px;}
+.rules-tabs{gap:6px;}
+.rtab{font-size:0.54rem;padding:6px 12px;}
 footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 }
 </style>
@@ -401,6 +637,65 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
   </div>
 </section>
 
+<!-- ===== QUICK LINKS BAR ===== -->
+
+<div class="ql-section rv">
+  <div class="ql-label">CHANNELS & LINKS</div>
+  <div class="ql-grid">
+
+```
+<a href="https://x.gd/1789O" target="_blank" rel="noopener" class="ql-item">
+  <div class="ql-icon">📡</div>
+  <div class="ql-name">ミラティブ</div>
+  <div class="ql-sub">配信</div>
+</a>
+
+<a href="https://www.youtube.com/@000re_ka" target="_blank" rel="noopener" class="ql-item">
+  <div class="ql-icon">▶</div>
+  <div class="ql-name">YouTube</div>
+  <div class="ql-sub">投稿</div>
+</a>
+
+<a href="https://www.tiktok.com/@000_reka" target="_blank" rel="noopener" class="ql-item">
+  <div class="ql-icon">♪</div>
+  <div class="ql-name">TikTok</div>
+  <div class="ql-sub">投稿</div>
+</a>
+
+<a href="https://twitter.com/xreeekax" target="_blank" rel="noopener" class="ql-item">
+  <div class="ql-icon">𝕏</div>
+  <div class="ql-name">活動用 X</div>
+  <div class="ql-sub">V活動</div>
+</a>
+
+<a href="https://twitter.com/000_reka" target="_blank" rel="noopener" class="ql-item ql-item-caution">
+  <div class="ql-icon">🔒</div>
+  <div class="ql-name">日常用</div>
+  <div class="ql-sub">鍵垢</div>
+</a>
+
+<a href="https://discord.gg/4h3ECCtwTJ" target="_blank" rel="noopener" class="ql-item ql-item-accent">
+  <div class="ql-icon">💬</div>
+  <div class="ql-name">Discord</div>
+  <div class="ql-sub">ファンサーバー</div>
+</a>
+
+<a href="https://www.amazon.jp/hz/wishlist/ls/1FEWWIE68W5HM?ref_=wl_share" target="_blank" rel="noopener" class="ql-item">
+  <div class="ql-icon">🎁</div>
+  <div class="ql-name">ほしりす</div>
+  <div class="ql-sub">プレゼント</div>
+</a>
+
+<a href="https://lit.link/Reeeka000" target="_blank" rel="noopener" class="ql-item ql-item-highlight">
+  <div class="ql-icon">✦</div>
+  <div class="ql-name">有償依頼</div>
+  <div class="ql-sub">受付中</div>
+</a>
+```
+
+  </div>
+</div>
+
 <div class="ddiv"><div class="dline"></div><div class="dcirc"></div></div>
 
 <!-- ABOUT -->
@@ -463,6 +758,100 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
     <div class="pc-ft"><span>ISSUED BY GALACTIC PHARMACY</span><span>Rk / 微睡観測所</span></div>
   </div>
 </div>
+
+<!-- ===== COLLAPSIBLE: 注意事項 ===== -->
+
+<div class="rules-wrap rv" id="rulesWrap">
+  <button class="rules-toggle" id="rulesToggle" aria-expanded="false" aria-controls="rulesBody">
+    <span class="rules-toggle-left">
+      <span class="rules-toggle-icon">◾</span>
+      <span class="rules-toggle-title">注意事項・ご案内</span>
+    </span>
+    <span class="rules-toggle-arrow" id="rulesArrow">▾</span>
+  </button>
+  <div class="rules-body" id="rulesBody" aria-hidden="true">
+    <div class="rules-inner">
+
+```
+  <!-- TAB NAV -->
+  <div class="rules-tabs">
+    <button class="rtab active" data-tab="rules">◾ ルール</button>
+    <button class="rtab" data-tab="fans">💜 偲民へ</button>
+    <button class="rtab" data-tab="skeb">✍ skeb依頼</button>
+  </div>
+
+  <!-- TAB: RULES -->
+  <div class="rtab-content active" id="tab-rules">
+    <div class="ri"><span class="rim">◾</span><span>話題に出ていない配信者さんの名前を出さないこと。</span></div>
+    <div class="ri"><span class="rim">◾</span><span>他枠で、話題に出ていないのに私の名前を出さないこと。</span></div>
+    <div class="ri"><span class="rim">◾</span><span>チャンネル内のイラスト／ロゴ／立ち絵などの<strong>無断使用・転載・AI学習禁止</strong>。（SNSアイコン利用、無許可のグッズ化含む）必ずクリエイター様への敬意を忘れないでください。</span></div>
+    <div class="ri"><span class="rim">◾</span><span>配信スクショのタグ投稿は可。Xへ掲載する場合は<strong>Grokの学習設定をオフ</strong>にしてください。</span></div>
+    <div class="ri"><span class="rim">◾</span><span><strong>コンテンツの個人利用</strong> — 有償依頼をしてれーかのイラスト等を依頼することも可ですが、使用はれーか本人の使用または依頼主の個人利用の範囲でお願いします。迷った場合は必ず事前にご相談ください。</span></div>
+    <div class="ri"><span class="rim">◾</span><span>場の空気を乱すコメント、差別的発言、過度なセクハラ、求めていない批評やアドバイスはお控えください。原則、私が拾いたいコメントを拾います。</span></div>
+    <div class="ri"><span class="rim">◾</span><span>配信の進行を妨げる行為は禁止です。「DM見て」など配信外でのやり取りを求める発言や、突然話題を遮って過度な自語りに持ち込む行為はお控えください。みんなで楽しむ空間であることをご理解ください。</span></div>
+    <div class="ri"><span class="rim">◾</span><span>ゲーム・雑談中の過度な指示や進行のコントロールはお控えください。アドバイスが欲しい場合はこちらから求めます。</span></div>
+    <div class="ri"><span class="rim">◾</span><span>「○○知ってるよね？」など<strong>内輪感を強める発言</strong>はお控えください。初見さんも安心できる空気作りにご協力ください。</span></div>
+    <div class="ri"><span class="rim">◾</span><span>配信内外問わず、過度な独占・特別扱いを求める発言はお控えください。健全で心地よい距離感を大切にしています。</span></div>
+    <div class="ri"><span class="rim">◾</span><span>アンチや荒らしは私／モデレーター／事務所が対応します。<strong>深追い禁止。スルーでお願いします。</strong></span></div>
+    <div class="ri"><span class="rim">◾</span><span>プライバシーに関する質問（居住地、年齢、人間関係など）は控えてください。私が触れている範囲のみでお願いします。</span></div>
+    <div class="ri"><span class="rim">◾</span><span>DMやリプライは、ご依頼・案件以外は返信できるもののみ対応します。ルールを守れない場合はブロック等の対応を行います。</span></div>
+  </div>
+
+  <!-- TAB: FANS -->
+  <div class="rtab-content" id="tab-fans">
+    <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>Xでの反応について</div><div class="love-b">いいね・RP・リプライとても嬉しいです。リプライは余裕のあるときにお返ししています。交流があると認知もしやすいので、たくさんお話してくれたら嬉しいです。通知勢も歓迎です。<br><strong>※他の方との会話へのいいねはご遠慮ください。</strong><br><strong>#れーかのたまりば</strong> での感想ポストもお待ちしています。</div></div>
+    <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>配信について</div><div class="love-b">ROMも大歓迎。顔を出してくれるだけで嬉しいです。コメントはもっと嬉しいです。イベント参加中やランクキープ中は、ギフトでの応援がとても力になります。投げられないときも、無料コインやコメント、企画参加など、それぞれの形で想いを届けてくれたら嬉しいです。</div></div>
+    <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>動画への反応</div><div class="love-b">再生・高評価・コメントは大きな力になります。私ひとりでは伸びません。<strong>一緒に育ててもらえたら嬉しいです。</strong></div></div>
+    <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>プレゼント</div><div class="love-b">ほしい物リストやイラストの贈り物は大きな励みになります。無理のない範囲でお願いします。</div></div>
+    <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>マイペースについて</div><div class="love-b">ときどきお休みします。そのときは静かに待っていてくれたら嬉しいです。目標は一緒に喜び、悔しさも分け合えたら。</div></div>
+    <div class="love-blk"><div class="love-h"><span class="love-hrt">💜</span>少しだけ大切なお願い</div><div class="love-b">「誰かがやってくれる」ではなく、<strong>あなたの気持ちをください。</strong><br>私の推しマは、タトゥーと同じくらい重いものです。重くて寂しがりな私を、ひとりにしないでくれたら嬉しいです。<br><br>お別れの際はブロックでお願いします。みんなと、末永くいられますように。</div></div>
+  </div>
+
+  <!-- TAB: SKEB -->
+  <div class="rtab-content" id="tab-skeb">
+    <p class="skeb-intro-r">私のイラスト等をskebや各コミッションサイトで依頼をすることを偲睡れーかは許可しています。必ずクリエイターさんに対して失礼の無いようお願いします。</p>
+    <div class="skeb-pt"><div class="skeb-pt-lbl">◾ POINT 01 — 活動上での使用許可</div>偲睡れーかの活動上での使用の許可を貰ってください。<br><strong>非商用</strong> ▶ おはツイ・サムネ・アイコン等 ／ <strong>商用込</strong> ▶ グッズ化・返礼品・案件利用など<br>絵師さんの金額より上乗せで依頼すると差分や商用利用など通りやすいです。</div>
+    <div class="skeb-pt"><div class="skeb-pt-lbl">◾ POINT 02 — 構図</div>頭周辺が見切れない構図であること（できれば）</div>
+    <div class="skeb-pt"><div class="skeb-pt-lbl">◾ POINT 03 — キャラクター識別</div>目の色、髪色、薬の髪留めは最低限欲しいかも。服装・構図・シチュエーションは依頼主にお任せします！<br>R-18は「特定の相手がいる描写NG」「センシティブ設定付き投稿」をお守りください。夢絵OK！</div>
+    <p style="font-family:'Space Mono',monospace;font-size:0.58rem;letter-spacing:0.12em;color:#c87fc8;margin:20px 0 8px;">— skeb用テンプレート —</p>
+    <div class="skeb-tpl" id="skebTpl">はじめまして、〇〇と申します。
+```
+
+作品を拝見しとても素敵だと感じ、ぜひイラストをお願いしたくリクエストさせていただきました。
+VTuber「偲睡れーか」のファンアート制作のご依頼です。
+
+【使用用途】
+・依頼者（私）および本人が使用
+・SNS掲載／アイコン／配信サムネイル／ネットプリント等
+
+【キャラクター詳細】
+・髪型：ウルフカット（くすみ青＋インナー紫）
+・髪留め：薬モチーフ
+・目：赤／瞳の中に十字（✝）
+・雰囲気：クール、ダウナー系
+
+【参考資料】
+立ち絵、三面図：https://lit.link/xreeekax
+
+【構図】
+・おまかせ（頭が見切れない構図だと嬉しいです）
+・可能であれば背景透過のキャラクター単体データもいただけますと幸いです
+
+【衣装】
+・既存衣装ベース／アレンジどちらでも可
+
+【その他】
+・NG表現などございましたらご自由に調整ください
+ご検討よろしくお願いいたします。</div>
+<button class="skeb-copy-btn" onclick="copySkebTpl()">📋 テンプレートをコピー</button>
+</div>
+
+```
+</div><!-- /.rules-inner -->
+```
+
+  </div><!-- /.rules-body -->
+</div><!-- /.rules-wrap -->
 
 <!-- anchor for nav -->
 
@@ -540,27 +929,54 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
   <div class="sec-lbl">CONTACT & LINKS</div>
   <h2 class="sec-ttl">コンタクト</h2>
   <div class="lnk-g">
-    <a href="https://x.com/xreeekax?s=21&t=0FwHMitqLtpeQdHkS2aO7A" target="_blank" rel="noopener" class="lnk-c rv">
-      <div class="lnk-ic">𝕏</div>
-      <div><div class="lnk-tt">X (Twitter)</div><div class="lnk-sb">@xreeekax</div></div>
-    </a>
-    <a href="https://lit.link/xreeekax" target="_blank" rel="noopener" class="lnk-c rv d1">
-      <div class="lnk-ic">💊</div>
-      <div><div class="lnk-tt">lit.link</div><div class="lnk-sb">全リンクまとめ</div></div>
-    </a>
-    <!-- ★ YouTubeのURLを正しいものに変えてください -->
-    <a href="https://www.youtube.com/@xreeekax" target="_blank" rel="noopener" class="lnk-c rv d2">
-      <div class="lnk-ic">▶</div>
-      <div><div class="lnk-tt">YouTube</div><div class="lnk-sb">歌みた · 活動記録</div></div>
-    </a>
-    <a href="blog.html" class="lnk-c rv d2">
-      <div class="lnk-ic">✍</div>
-      <div><div class="lnk-tt">観測日誌</div><div class="lnk-sb">ブログ · 活動記録</div></div>
-    </a>
-    <a href="https://lit.link/xreeekax" target="_blank" rel="noopener" class="lnk-c lnk-full rv d3" style="border-color:rgba(180,80,200,0.38);">
-      <div class="lnk-ic">🌌</div>
-      <div><div class="lnk-tt">その他すべてのリンク</div><div class="lnk-sb">lit.link/xreeekax — 全サービスまとめ</div></div>
-    </a>
+
+```
+<a href="https://twitter.com/xreeekax" target="_blank" rel="noopener" class="lnk-c rv">
+  <div class="lnk-ic">𝕏</div>
+  <div><div class="lnk-tt">活動用 X</div><div class="lnk-sb">@xreeekax — V活動</div></div>
+</a>
+
+<a href="https://www.youtube.com/@000re_ka" target="_blank" rel="noopener" class="lnk-c rv d1">
+  <div class="lnk-ic">▶</div>
+  <div><div class="lnk-tt">YouTube</div><div class="lnk-sb">@000re_ka — 歌みた · 投稿</div></div>
+</a>
+
+<a href="https://x.gd/1789O" target="_blank" rel="noopener" class="lnk-c rv">
+  <div class="lnk-ic">📡</div>
+  <div><div class="lnk-tt">ミラティブ</div><div class="lnk-sb">配信 — ほぼ毎日</div></div>
+</a>
+
+<a href="https://www.tiktok.com/@000_reka" target="_blank" rel="noopener" class="lnk-c rv d1">
+  <div class="lnk-ic">♪</div>
+  <div><div class="lnk-tt">TikTok</div><div class="lnk-sb">@000_reka — ストーリー</div></div>
+</a>
+
+<a href="https://discord.gg/4h3ECCtwTJ" target="_blank" rel="noopener" class="lnk-c rv d2">
+  <div class="lnk-ic">💬</div>
+  <div><div class="lnk-tt">Discord</div><div class="lnk-sb">れーかのひみつべや — 承認制</div></div>
+</a>
+
+<a href="https://twitter.com/000_reka" target="_blank" rel="noopener" class="lnk-c rv d2">
+  <div class="lnk-ic">🔒</div>
+  <div><div class="lnk-tt">日常用 鍵垢</div><div class="lnk-sb">@000_reka — ネガティブ注意</div></div>
+</a>
+
+<a href="https://www.amazon.jp/hz/wishlist/ls/1FEWWIE68W5HM?ref_=wl_share" target="_blank" rel="noopener" class="lnk-c rv d3">
+  <div class="lnk-ic">🎁</div>
+  <div><div class="lnk-tt">ほしい物リスト</div><div class="lnk-sb">Amazon — 励みになります</div></div>
+</a>
+
+<a href="https://lit.link/Reeeka000" target="_blank" rel="noopener" class="lnk-c rv d3">
+  <div class="lnk-ic">✦</div>
+  <div><div class="lnk-tt">有償依頼</div><div class="lnk-sb">lit.link/Reeeka000 — 受付中</div></div>
+</a>
+
+<a href="https://lit.link/xreeekax" target="_blank" rel="noopener" class="lnk-c lnk-full rv" style="border-color:rgba(180,80,200,0.38);margin-top:4px;">
+  <div class="lnk-ic">🌌</div>
+  <div><div class="lnk-tt">その他すべてのリンク</div><div class="lnk-sb">lit.link/xreeekax — 全サービスまとめ</div></div>
+</a>
+```
+
   </div>
 </div>
 
@@ -633,6 +1049,54 @@ window.addEventListener('load',function(){
   trig.addEventListener('touchend',cancel);trig.addEventListener('touchcancel',cancel);
   trig.addEventListener('contextmenu',function(e){e.preventDefault();});
 })();
+
+/* COLLAPSIBLE RULES TOGGLE */
+(function(){
+  var btn=document.getElementById('rulesToggle');
+  var body=document.getElementById('rulesBody');
+  if(!btn||!body)return;
+  btn.addEventListener('click',function(){
+    var open=body.classList.toggle('open');
+    btn.classList.toggle('open',open);
+    btn.setAttribute('aria-expanded',open);
+    body.setAttribute('aria-hidden',String(!open));
+  });
+})();
+
+/* TAB SWITCHING */
+(function(){
+  document.querySelectorAll('.rtab').forEach(function(tab){
+    tab.addEventListener('click',function(){
+      var target=tab.getAttribute('data-tab');
+      document.querySelectorAll('.rtab').forEach(function(t){t.classList.remove('active');});
+      document.querySelectorAll('.rtab-content').forEach(function(c){c.classList.remove('active');});
+      tab.classList.add('active');
+      var c=document.getElementById('tab-'+target);
+      if(c)c.classList.add('active');
+    });
+  });
+})();
+
+/* COPY SKEB TEMPLATE */
+function copySkebTpl(){
+  var text=document.getElementById('skebTpl').textContent;
+  var btn=document.querySelector('.skeb-copy-btn');
+  function done(){
+    var orig=btn.textContent;
+    btn.textContent='✓ コピーしました';
+    btn.style.background='rgba(80,180,100,0.18)';btn.style.borderColor='rgba(80,180,100,0.5)';btn.style.color='#80e0a0';
+    setTimeout(function(){btn.textContent=orig;btn.style.background='';btn.style.borderColor='';btn.style.color='';},2000);
+  }
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(text).then(done).catch(function(){_fb(text,done);});}
+  else{_fb(text,done);}
+}
+function _fb(text,done){
+  var ta=document.createElement('textarea');ta.value=text;
+  ta.style.cssText='position:fixed;top:-9999px;left:-9999px;';
+  document.body.appendChild(ta);ta.focus();ta.select();
+  try{document.execCommand('copy');done();}catch(e){}
+  document.body.removeChild(ta);
+}
 </script>
 
 </body>

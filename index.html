@@ -17,7 +17,7 @@ a{color:inherit;text-decoration:none;}
 
 /* ===== IMAGE SAVE PROTECTION ===== */
 .hchar-wrap img,
-.hchar-bg{
+.hchar-watermark{
 -webkit-touch-callout:none;
 -webkit-user-select:none;
 user-select:none;
@@ -160,16 +160,22 @@ border:1px solid rgba(180,80,200,0.5);color:#f0e0ff;
 .himg{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;animation:fadR 1.2s ease 0.3s both;}
 @keyframes fadR{from{opacity:0;transform:translateX(40px);}to{opacity:1;transform:translateX(0);}}
 
-/* BG CHARACTER (watermark-style, no blur) */
+/* BG CHARACTER — watermark top-left, fixed across all browsers */
 .hchar-watermark{
 position:absolute;
-top:50%;left:50%;
-transform:translate(-50%,-50%) translateY(-8%);
-width:135%;max-width:720px;height:auto;
+top:0;
+left:-2%;
+width:auto;
+height:100%;
+max-height:100vh;
 opacity:0.18;
-pointer-events:none;z-index:1;
+pointer-events:none;
+z-index:1;
 -webkit-touch-callout:none;
+-webkit-user-select:none;
 user-select:none;
+object-fit:contain;
+object-position:top left;
 animation:flt 6s ease-in-out infinite;
 }
 
@@ -615,7 +621,7 @@ nav{padding:12px 18px;}
 .htag{margin:0 auto;border-left:none;padding-left:0;border-top:1px solid rgba(180,80,200,0.22);padding-top:14px;}
 .himg{order:-1;align-items:center;}
 .hchar{max-width:270px;}
-.hchar-bg{max-width:380px;}
+
 .rxf{display:none;}
 .hcta-row{justify-content:center;}
 .credit-strip{margin-top:8px;}
@@ -640,6 +646,7 @@ nav{padding:12px 18px;}
 footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 .slider-credit-inner{flex-direction:column;gap:6px;border-radius:14px;padding:10px 16px;}
 .slider-credit-sep{width:40px;height:1px;}
+.hchar-watermark{height:80%;top:10%;left:-6%;}
 }
 @media(max-width:400px){
 .ql-grid{grid-template-columns:repeat(4,1fr);gap:5px;}
@@ -700,6 +707,8 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 
 <section class="hero">
   <div class="hero-bg"></div>
+  <!-- Watermark background: top-left, no blur -->
+  <img src="背景透過 - れーか.png" alt="" class="hchar-watermark" aria-hidden="true" draggable="false" oncontextmenu="return false;">
   <div class="neb n1"></div><div class="neb n2"></div><div class="neb n3"></div>
   <div class="hero-inner">
     <div class="htxt">
@@ -715,8 +724,6 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
       </div>
     </div>
     <div class="himg">
-      <!-- Watermark background (no blur) -->
-      <img src="背景透過 - れーか.png" alt="" class="hchar-watermark" aria-hidden="true" draggable="false" oncontextmenu="return false;">
       <div class="gring gr1"></div><div class="gring gr2"></div>
       <div class="hchar-glow"></div>
       <div class="strig" id="strig">
@@ -1105,7 +1112,7 @@ window.addEventListener('load',function(){
 
   /* Block context menu / image save on entire strig area */
   trig.addEventListener('contextmenu',function(e){e.preventDefault();return false;});
-  document.querySelectorAll('.hchar-wrap img,.hchar-bg').forEach(function(img){
+  document.querySelectorAll('.hchar-wrap img,.hchar-watermark').forEach(function(img){
     img.addEventListener('contextmenu',function(e){e.preventDefault();return false;});
   });
 

@@ -521,115 +521,134 @@ grid-template-columns:1fr;
 gap:10px;
 }
 
-/* ── Square icon card ── */
+/* ── Square icon card — clear glass, neon border only ── */
 .ql-item{
 display:flex;flex-direction:column;align-items:center;justify-content:center;
 gap:9px;
 padding:20px 10px 16px;
 border-radius:18px;
+/* 内部は完全透明ガラス */
+background:rgba(255,255,255,0.04);
 border:1px solid transparent;
-backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+backdrop-filter:blur(20px) saturate(1.6);
+-webkit-backdrop-filter:blur(20px) saturate(1.6);
 transition:all 0.32s ease;
 text-align:center;
 position:relative;overflow:hidden;
 }
-/* colour themes per row */
-.ql-item-purple{
-background:linear-gradient(145deg,rgba(120,40,180,0.38),rgba(80,20,140,0.28));
-border-color:rgba(180,80,220,0.32);
-box-shadow:inset 0 0 24px rgba(160,60,220,0.12);
-}
-.ql-item-pink{
-background:linear-gradient(145deg,rgba(200,80,160,0.32),rgba(160,40,120,0.22));
-border-color:rgba(220,100,180,0.32);
-box-shadow:inset 0 0 24px rgba(220,80,180,0.12);
-}
-.ql-item-cyan{
-background:linear-gradient(145deg,rgba(40,160,200,0.28),rgba(20,100,160,0.20));
-border-color:rgba(80,180,220,0.30);
-box-shadow:inset 0 0 24px rgba(60,180,220,0.12);
-}
-.ql-item-soft{
-background:linear-gradient(145deg,rgba(140,60,200,0.28),rgba(80,140,200,0.20));
-border-color:rgba(160,100,220,0.28);
-box-shadow:inset 0 0 20px rgba(120,80,200,0.10);
-}
 
-/* shimmer overlay */
+/* ── 枠線のみネオンカラー ── */
+.ql-item-purple{ border-color:rgba(210,100,255,0.70); box-shadow:0 0 10px rgba(200,80,255,0.18),inset 0 0 0 0 transparent; }
+.ql-item-pink{   border-color:rgba(255,100,190,0.70); box-shadow:0 0 10px rgba(255,80,180,0.18),inset 0 0 0 0 transparent; }
+.ql-item-cyan{   border-color:rgba(40,220,255,0.70);  box-shadow:0 0 10px rgba(0,210,255,0.18),inset 0 0 0 0 transparent; }
+.ql-item-soft{   border-color:rgba(170,110,255,0.65); box-shadow:0 0 10px rgba(140,90,255,0.18),inset 0 0 0 0 transparent; }
+
+/* 最上部に細い光ライン（ガラスの反射エッジ） */
 .ql-item::before{
 content:’’;
-position:absolute;inset:0;
-background:linear-gradient(135deg,rgba(255,255,255,0.06) 0%,rgba(255,255,255,0) 60%);
-pointer-events:none;border-radius:inherit;
+position:absolute;
+top:0;left:8%;right:8%;height:1px;
+background:linear-gradient(to right,transparent,rgba(255,255,255,0.30),transparent);
+pointer-events:none;
 }
+.ql-item::after{ content:none; }
 
 .ql-item:hover{
-transform:translateY(-5px);
-filter:brightness(1.15);
-box-shadow:0 12px 32px rgba(180,80,220,0.28);
+transform:translateY(-5px) scale(1.03);
+background:rgba(255,255,255,0.07);
+box-shadow:0 12px 32px rgba(180,80,255,0.22);
 }
 
-/* ── Banner card ── */
+/* ── アイコン背景のみネオン着彩 ── */
+.ql-item-purple .ql-icon{ background:linear-gradient(to bottom,rgba(200,80,255,0.55),rgba(130,30,220,0.40)); border:1px solid rgba(220,120,255,0.50); box-shadow:0 0 12px rgba(200,80,255,0.30); }
+.ql-item-pink   .ql-icon{ background:linear-gradient(to bottom,rgba(255,80,180,0.55),rgba(200,30,140,0.38)); border:1px solid rgba(255,120,200,0.50); box-shadow:0 0 12px rgba(255,80,180,0.30); }
+.ql-item-cyan   .ql-icon{ background:linear-gradient(to bottom,rgba(0,210,255,0.52),rgba(0,130,210,0.36));  border:1px solid rgba(60,220,255,0.50); box-shadow:0 0 12px rgba(0,200,255,0.30); }
+.ql-item-soft   .ql-icon{ background:linear-gradient(to bottom,rgba(160,80,255,0.50),rgba(60,150,240,0.35));border:1px solid rgba(180,120,255,0.50); box-shadow:0 0 12px rgba(140,90,255,0.28); }
+
+/* ── Banner card — clear glass, neon border ── */
 .ql-item-banner{
 display:flex;flex-direction:row;align-items:center;justify-content:center;
 gap:16px;
 padding:22px 32px;
 border-radius:18px;
-border:1px solid rgba(200,80,160,0.42);
-background:linear-gradient(100deg,
-rgba(120,40,180,0.42) 0%,
-rgba(200,60,160,0.38) 40%,
-rgba(60,160,200,0.32) 100%);
-box-shadow:inset 0 0 40px rgba(200,80,180,0.14),0 4px 24px rgba(180,60,180,0.18);
-backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+/* 内部透明ガラス */
+background:rgba(255,255,255,0.04);
+/* 枠線：縦グラデーション風の複合ボーダー */
+border:1px solid rgba(255,100,200,0.65);
+box-shadow:
+0 0 0 1px rgba(0,200,255,0.0),
+0 0 18px rgba(220,80,200,0.18),
+inset 0 0 0 0 transparent;
+backdrop-filter:blur(20px) saturate(1.6);
+-webkit-backdrop-filter:blur(20px) saturate(1.6);
 position:relative;overflow:hidden;
 transition:all 0.32s ease;
 }
+/* 上端反射エッジ */
 .ql-item-banner::before{
 content:’’;
-position:absolute;inset:0;
-background:linear-gradient(110deg,rgba(255,255,255,0.08) 0%,rgba(255,255,255,0) 55%);
-pointer-events:none;border-radius:inherit;
+position:absolute;
+top:0;left:6%;right:6%;height:1px;
+background:linear-gradient(to right,transparent,rgba(255,255,255,0.32),transparent);
+pointer-events:none;
+}
+/* 下端に水色グロー線 */
+.ql-item-banner::after{
+content:’’;
+position:absolute;
+bottom:0;left:6%;right:6%;height:1px;
+background:linear-gradient(to right,transparent,rgba(0,220,255,0.60),transparent);
+pointer-events:none;
 }
 .ql-item-banner:hover{
-transform:translateY(-4px);
-filter:brightness(1.12);
-box-shadow:0 14px 40px rgba(200,80,180,0.32);
+transform:translateY(-4px) scale(1.01);
+background:rgba(255,255,255,0.07);
+box-shadow:0 14px 40px rgba(220,60,200,0.24);
 }
 .ql-banner-icon{
 font-size:1.8rem;line-height:1;flex-shrink:0;
+filter:drop-shadow(0 0 8px rgba(255,180,255,0.7));
 }
 .ql-banner-body{display:flex;flex-direction:column;gap:3px;text-align:left;}
 .ql-banner-name{
 font-family:‘Zen Old Mincho’,serif;
 font-size:1.05rem;letter-spacing:0.18em;
-color:#f0d8ff;text-shadow:0 0 12px rgba(220,120,255,0.5);
+color:#fff;
+text-shadow:0 0 14px rgba(255,140,255,0.8),0 0 30px rgba(220,80,255,0.4);
 }
 .ql-banner-sub{
 font-family:‘Space Mono’,monospace;font-size:0.54rem;
-letter-spacing:0.16em;color:rgba(220,180,255,0.65);
+letter-spacing:0.16em;color:rgba(255,220,255,0.70);
 }
 .ql-banner-handle{
 font-family:‘Space Mono’,monospace;font-size:0.6rem;
-letter-spacing:0.08em;color:rgba(200,140,240,0.8);margin-top:2px;
+letter-spacing:0.08em;
+color:rgba(160,240,255,0.90);
+text-shadow:0 0 8px rgba(0,200,255,0.6);
+margin-top:2px;
 }
 
 /* ── Square icon internals ── */
 .ql-icon{
 font-size:1.6rem;line-height:1;
 width:52px;height:52px;border-radius:14px;
-background:rgba(255,255,255,0.07);
+/* デフォルト（クラスで上書き） */
+background:rgba(255,255,255,0.08);
+border:1px solid rgba(255,255,255,0.14);
 display:flex;align-items:center;justify-content:center;
-transition:background 0.3s;
-box-shadow:0 2px 8px rgba(0,0,0,0.2);
+transition:all 0.3s;
+box-shadow:0 2px 10px rgba(0,0,0,0.20);
 }
 .ql-name{
 font-family:‘Space Mono’,monospace;font-size:0.58rem;
-letter-spacing:0.06em;color:#e0c8f8;line-height:1.3;font-weight:700;
+letter-spacing:0.06em;
+color:#fff;
+text-shadow:0 0 8px rgba(220,180,255,0.7);
+line-height:1.3;font-weight:700;
 }
 .ql-sub{
 font-family:‘Space Mono’,monospace;font-size:0.46rem;
-letter-spacing:0.08em;color:rgba(200,160,240,0.55);line-height:1;
+letter-spacing:0.08em;color:rgba(220,200,255,0.60);line-height:1;
 }
 
 /* ===== COLLAPSIBLE RULES ===== */

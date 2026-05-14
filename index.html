@@ -485,7 +485,7 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(180,80,200,0.1);pad
 .rv.vis{opacity:1;transform:translateY(0);}
 .d1{transition-delay:0.12s;}.d2{transition-delay:0.24s;}.d3{transition-delay:0.36s;}
 
-/* ===== QUICK LINK BAR ===== */
+/* ===== QUICK LINK BAR — 3-row redesign ===== */
 .ql-section{
 position:relative;z-index:1;
 max-width:900px;margin:0 auto;
@@ -500,53 +500,136 @@ display:flex;align-items:center;gap:10px;
 .ql-label::before{content:’’;display:block;width:22px;height:1px;background:rgba(120,60,180,0.4);}
 .ql-label::after{content:’’;display:block;flex:1;height:1px;background:linear-gradient(to right,rgba(120,60,180,0.3),rgba(120,60,180,0));}
 
+/* wrapper: 3 rows */
 .ql-grid{
+display:flex;
+flex-direction:column;
+gap:10px;
+}
+
+/* Row 1 & 3: square icons */
+.ql-row{
 display:grid;
-grid-template-columns:repeat(8,1fr);
-gap:8px;
+grid-template-columns:repeat(4,1fr);
+gap:10px;
 }
 
+/* Row 2: single banner */
+.ql-row-banner{
+display:grid;
+grid-template-columns:1fr;
+gap:10px;
+}
+
+/* ── Square icon card ── */
 .ql-item{
-display:flex;flex-direction:column;align-items:center;
-gap:7px;padding:14px 6px 12px;
-border-radius:14px;
-background:rgba(10,5,25,0.6);
-border:1px solid rgba(180,80,200,0.16);
-backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
-transition:all 0.3s ease;
+display:flex;flex-direction:column;align-items:center;justify-content:center;
+gap:9px;
+padding:20px 10px 16px;
+border-radius:18px;
+border:1px solid transparent;
+backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+transition:all 0.32s ease;
 text-align:center;
+position:relative;overflow:hidden;
 }
-.ql-item:hover{
-background:rgba(180,80,200,0.14);
-border-color:rgba(180,80,200,0.55);
-transform:translateY(-4px);
-box-shadow:0 8px 20px rgba(180,80,200,0.18);
+/* colour themes per row */
+.ql-item-purple{
+background:linear-gradient(145deg,rgba(120,40,180,0.38),rgba(80,20,140,0.28));
+border-color:rgba(180,80,220,0.32);
+box-shadow:inset 0 0 24px rgba(160,60,220,0.12);
 }
-.ql-item-caution{border-color:rgba(200,160,60,0.18);}
-.ql-item-caution:hover{background:rgba(200,160,60,0.1);border-color:rgba(200,160,60,0.5);box-shadow:0 8px 20px rgba(200,160,60,0.14);}
-.ql-item-accent{border-color:rgba(88,101,242,0.25);}
-.ql-item-accent:hover{background:rgba(88,101,242,0.12);border-color:rgba(88,101,242,0.55);box-shadow:0 8px 20px rgba(88,101,242,0.15);}
-.ql-item-highlight{border-color:rgba(200,127,200,0.3);}
-.ql-item-highlight:hover{background:rgba(200,127,200,0.15);border-color:rgba(200,127,200,0.65);box-shadow:0 8px 20px rgba(200,127,200,0.2);}
+.ql-item-pink{
+background:linear-gradient(145deg,rgba(200,80,160,0.32),rgba(160,40,120,0.22));
+border-color:rgba(220,100,180,0.32);
+box-shadow:inset 0 0 24px rgba(220,80,180,0.12);
+}
+.ql-item-cyan{
+background:linear-gradient(145deg,rgba(40,160,200,0.28),rgba(20,100,160,0.20));
+border-color:rgba(80,180,220,0.30);
+box-shadow:inset 0 0 24px rgba(60,180,220,0.12);
+}
+.ql-item-soft{
+background:linear-gradient(145deg,rgba(140,60,200,0.28),rgba(80,140,200,0.20));
+border-color:rgba(160,100,220,0.28);
+box-shadow:inset 0 0 20px rgba(120,80,200,0.10);
+}
 
+/* shimmer overlay */
+.ql-item::before{
+content:’’;
+position:absolute;inset:0;
+background:linear-gradient(135deg,rgba(255,255,255,0.06) 0%,rgba(255,255,255,0) 60%);
+pointer-events:none;border-radius:inherit;
+}
+
+.ql-item:hover{
+transform:translateY(-5px);
+filter:brightness(1.15);
+box-shadow:0 12px 32px rgba(180,80,220,0.28);
+}
+
+/* ── Banner card ── */
+.ql-item-banner{
+display:flex;flex-direction:row;align-items:center;justify-content:center;
+gap:16px;
+padding:22px 32px;
+border-radius:18px;
+border:1px solid rgba(200,80,160,0.42);
+background:linear-gradient(100deg,
+rgba(120,40,180,0.42) 0%,
+rgba(200,60,160,0.38) 40%,
+rgba(60,160,200,0.32) 100%);
+box-shadow:inset 0 0 40px rgba(200,80,180,0.14),0 4px 24px rgba(180,60,180,0.18);
+backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+position:relative;overflow:hidden;
+transition:all 0.32s ease;
+}
+.ql-item-banner::before{
+content:’’;
+position:absolute;inset:0;
+background:linear-gradient(110deg,rgba(255,255,255,0.08) 0%,rgba(255,255,255,0) 55%);
+pointer-events:none;border-radius:inherit;
+}
+.ql-item-banner:hover{
+transform:translateY(-4px);
+filter:brightness(1.12);
+box-shadow:0 14px 40px rgba(200,80,180,0.32);
+}
+.ql-banner-icon{
+font-size:1.8rem;line-height:1;flex-shrink:0;
+}
+.ql-banner-body{display:flex;flex-direction:column;gap:3px;text-align:left;}
+.ql-banner-name{
+font-family:‘Zen Old Mincho’,serif;
+font-size:1.05rem;letter-spacing:0.18em;
+color:#f0d8ff;text-shadow:0 0 12px rgba(220,120,255,0.5);
+}
+.ql-banner-sub{
+font-family:‘Space Mono’,monospace;font-size:0.54rem;
+letter-spacing:0.16em;color:rgba(220,180,255,0.65);
+}
+.ql-banner-handle{
+font-family:‘Space Mono’,monospace;font-size:0.6rem;
+letter-spacing:0.08em;color:rgba(200,140,240,0.8);margin-top:2px;
+}
+
+/* ── Square icon internals ── */
 .ql-icon{
-font-size:1.25rem;line-height:1;
-width:36px;height:36px;border-radius:10px;
-background:rgba(180,80,200,0.1);
+font-size:1.6rem;line-height:1;
+width:52px;height:52px;border-radius:14px;
+background:rgba(255,255,255,0.07);
 display:flex;align-items:center;justify-content:center;
 transition:background 0.3s;
+box-shadow:0 2px 8px rgba(0,0,0,0.2);
 }
-.ql-item-caution .ql-icon{background:rgba(200,160,60,0.1);}
-.ql-item-accent .ql-icon{background:rgba(88,101,242,0.1);}
-.ql-item-highlight .ql-icon{background:rgba(200,127,200,0.15);}
-
 .ql-name{
-font-family:‘Space Mono’,monospace;font-size:0.56rem;
-letter-spacing:0.06em;color:#c0a0d8;line-height:1.2;
+font-family:‘Space Mono’,monospace;font-size:0.58rem;
+letter-spacing:0.06em;color:#e0c8f8;line-height:1.3;font-weight:700;
 }
 .ql-sub{
 font-family:‘Space Mono’,monospace;font-size:0.46rem;
-letter-spacing:0.06em;color:#6a5080;line-height:1;
+letter-spacing:0.08em;color:rgba(200,160,240,0.55);line-height:1;
 }
 
 /* ===== COLLAPSIBLE RULES ===== */
@@ -636,11 +719,7 @@ nav{padding:12px 18px;}
 .yt-full{grid-column:span 1;}
 .ddeco,.fp1,.fp2,.fp3{display:none;}
 .sec,.yt-sec,.gal-sec,.x-sec,.pc-wrap,.rules-wrap,.ql-section{padding-left:20px;padding-right:20px;}
-.ql-grid{grid-template-columns:repeat(4,1fr);gap:7px;}
-.ql-item{padding:11px 4px 10px;border-radius:11px;}
-.ql-icon{width:28px;height:28px;font-size:0.95rem;border-radius:8px;}
-.ql-name{font-size:0.5rem;}
-.ql-sub{display:none;}
+
 .rules-inner{padding:16px 16px 20px;}
 .rules-tabs{gap:6px;}
 .rtab{font-size:0.54rem;padding:6px 12px;}
@@ -650,10 +729,18 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 .slider-credit-inner{flex-direction:column;gap:6px;border-radius:14px;padding:10px 16px;}
 .slider-credit-sep{width:40px;height:1px;}
 /* watermark: phone — large, left-offset so head clears foreground char */
-.hchar-watermark{height:90%;top:-2%;left:-38%;transform:scale(1.5);transform-origin:top left;}
+.hchar-watermark{height:90%;top:-2%;left:-38%;transform:scale(1.5);transform-origin:top left;
+.ql-row{grid-template-columns:repeat(4,1fr);gap:8px;}
+.ql-item{padding:16px 6px 13px;border-radius:14px;}
+.ql-icon{width:40px;height:40px;font-size:1.25rem;border-radius:10px;}
+.ql-name{font-size:0.5rem;}
+.ql-sub{display:none;}
+.ql-item-banner{padding:18px 20px;gap:12px;}
+.ql-banner-name{font-size:0.88rem;}
+.ql-banner-sub,.ql-banner-handle{font-size:0.5rem;}
 }
 @media(max-width:400px){
-.ql-grid{grid-template-columns:repeat(4,1fr);gap:5px;}
+.ql-row{grid-template-columns:repeat(4,1fr);gap:6px;}
 .ql-name{font-size:0.45rem;}
 }
 </style>
@@ -763,51 +850,74 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
   </div>
 </section>
 
-<!-- ===== QUICK LINKS BAR ===== -->
+<!-- ===== QUICK LINKS BAR — 3-row redesign ===== -->
 
 <div class="ql-section rv">
   <div class="ql-label">CHANNELS &amp; LINKS</div>
   <div class="ql-grid">
-    <a href="https://x.gd/1789O" target="_blank" rel="noopener" class="ql-item">
-      <div class="ql-icon">📡</div>
-      <div class="ql-name">ミラティブ</div>
-      <div class="ql-sub">配信</div>
-    </a>
-    <a href="https://www.youtube.com/@000re_ka" target="_blank" rel="noopener" class="ql-item">
-      <div class="ql-icon">▶</div>
-      <div class="ql-name">YouTube</div>
-      <div class="ql-sub">投稿</div>
-    </a>
-    <a href="https://www.tiktok.com/@000_reka" target="_blank" rel="noopener" class="ql-item">
-      <div class="ql-icon">♪</div>
-      <div class="ql-name">TikTok</div>
-      <div class="ql-sub">投稿</div>
-    </a>
-    <a href="https://twitter.com/xreeekax" target="_blank" rel="noopener" class="ql-item">
-      <div class="ql-icon">𝕏</div>
-      <div class="ql-name">活動用 X</div>
-      <div class="ql-sub">V活動</div>
-    </a>
-    <a href="https://twitter.com/000_reka" target="_blank" rel="noopener" class="ql-item ql-item-caution">
-      <div class="ql-icon">🔒</div>
-      <div class="ql-name">日常用</div>
-      <div class="ql-sub">鍵垢</div>
-    </a>
-    <a href="https://discord.gg/4h3ECCtwTJ" target="_blank" rel="noopener" class="ql-item ql-item-accent">
-      <div class="ql-icon">💬</div>
-      <div class="ql-name">Discord</div>
-      <div class="ql-sub">ファンサーバー</div>
-    </a>
-    <a href="https://www.amazon.jp/hz/wishlist/ls/1FEWWIE68W5HM?ref_=wl_share" target="_blank" rel="noopener" class="ql-item">
-      <div class="ql-icon">🎁</div>
-      <div class="ql-name">ほしりす</div>
-      <div class="ql-sub">プレゼント</div>
-    </a>
-    <a href="https://lit.link/Reeeka000" target="_blank" rel="noopener" class="ql-item ql-item-highlight">
-      <div class="ql-icon">✦</div>
-      <div class="ql-name">有償依頼</div>
-      <div class="ql-sub">受付中</div>
-    </a>
+
+```
+<!-- ROW 1: 4 square icons (purple / pink tones) -->
+<div class="ql-row">
+  <a href="https://x.gd/1789O" target="_blank" rel="noopener" class="ql-item ql-item-purple">
+    <div class="ql-icon">📡</div>
+    <div class="ql-name">ミラティブ</div>
+    <div class="ql-sub">配信</div>
+  </a>
+  <a href="https://www.youtube.com/@000re_ka" target="_blank" rel="noopener" class="ql-item ql-item-pink">
+    <div class="ql-icon">▶</div>
+    <div class="ql-name">YouTube</div>
+    <div class="ql-sub">投稿</div>
+  </a>
+  <a href="https://www.tiktok.com/@000_reka" target="_blank" rel="noopener" class="ql-item ql-item-purple">
+    <div class="ql-icon">♪</div>
+    <div class="ql-name">TikTok</div>
+    <div class="ql-sub">投稿</div>
+  </a>
+  <a href="https://discord.gg/4h3ECCtwTJ" target="_blank" rel="noopener" class="ql-item ql-item-cyan">
+    <div class="ql-icon">💬</div>
+    <div class="ql-name">Discord</div>
+    <div class="ql-sub">サーバー</div>
+  </a>
+</div>
+
+<!-- ROW 2: wide banner — 活動用 X -->
+<div class="ql-row-banner">
+  <a href="https://twitter.com/xreeekax" target="_blank" rel="noopener" class="ql-item-banner">
+    <div class="ql-banner-icon">𝕏</div>
+    <div class="ql-banner-body">
+      <div class="ql-banner-name">活動用 X</div>
+      <div class="ql-banner-sub">V ACTIVITY — MAIN ACCOUNT</div>
+      <div class="ql-banner-handle">@xreeekax</div>
+    </div>
+  </a>
+</div>
+
+<!-- ROW 3: 4 square icons (cyan / soft tones) -->
+<div class="ql-row">
+  <a href="https://twitter.com/000_reka" target="_blank" rel="noopener" class="ql-item ql-item-soft">
+    <div class="ql-icon">🔒</div>
+    <div class="ql-name">日常用 X</div>
+    <div class="ql-sub">鍵垢</div>
+  </a>
+  <a href="https://www.amazon.jp/hz/wishlist/ls/1FEWWIE68W5HM?ref_=wl_share" target="_blank" rel="noopener" class="ql-item ql-item-pink">
+    <div class="ql-icon">🎁</div>
+    <div class="ql-name">ほしりす</div>
+    <div class="ql-sub">プレゼント</div>
+  </a>
+  <a href="https://lit.link/Reeeka000" target="_blank" rel="noopener" class="ql-item ql-item-purple">
+    <div class="ql-icon">✦</div>
+    <div class="ql-name">有償依頼</div>
+    <div class="ql-sub">受付中</div>
+  </a>
+  <a href="https://lit.link/xreeekax" target="_blank" rel="noopener" class="ql-item ql-item-cyan">
+    <div class="ql-icon">🔗</div>
+    <div class="ql-name">lit.link</div>
+    <div class="ql-sub">まとめ</div>
+  </a>
+</div>
+```
+
   </div>
 </div>
 

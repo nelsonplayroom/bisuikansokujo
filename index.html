@@ -160,15 +160,14 @@ border:1px solid rgba(180,80,200,0.5);color:#f0e0ff;
 .himg{position:relative;display:flex;flex-direction:column;justify-content:center;align-items:flex-end;animation:fadR 1.2s ease 0.3s both;}
 @keyframes fadR{from{opacity:0;transform:translateX(40px);}to{opacity:1;transform:translateX(0);}}
 
-/* BG CHARACTER — watermark top-left, fixed across all browsers */
+/* BG CHARACTER — watermark, left-offset behind foreground */
 .hchar-watermark{
 position:absolute;
-top:0;
-left:-2%;
+top:-5%;
+left:-18%;
 width:auto;
-height:100%;
-max-height:100vh;
-opacity:0.18;
+height:115%;
+opacity:0.20;
 pointer-events:none;
 z-index:1;
 -webkit-touch-callout:none;
@@ -612,6 +611,10 @@ color:#8060a0;transition:all 0.25s;-webkit-appearance:none;appearance:none;
 .skeb-copy-btn{display:inline-flex;align-items:center;gap:6px;margin-top:10px;padding:7px 16px;border-radius:100px;background:rgba(180,80,200,0.1);border:1px solid rgba(180,80,200,0.28);font-family:‘Space Mono’,monospace;font-size:0.56rem;letter-spacing:0.1em;color:#c87fc8;transition:all 0.3s;-webkit-appearance:none;appearance:none;}
 .skeb-copy-btn:hover{background:rgba(180,80,200,0.2);border-color:rgba(180,80,200,0.55);color:#e0a0f0;}
 
+/* iPad / tablet */
+@media(max-width:1024px) and (min-width:769px){
+.hchar-watermark{height:100%;top:-3%;left:-12%;}
+}
 @media(max-width:768px){
 nav{padding:12px 18px;}
 .nav-l .nav-a:nth-child(2),.nav-r .nav-a:nth-child(1){display:none;}
@@ -646,7 +649,8 @@ nav{padding:12px 18px;}
 footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 .slider-credit-inner{flex-direction:column;gap:6px;border-radius:14px;padding:10px 16px;}
 .slider-credit-sep{width:40px;height:1px;}
-.hchar-watermark{height:80%;top:10%;left:-6%;}
+/* watermark: phone — large, left-offset so head clears foreground char */
+.hchar-watermark{height:90%;top:-2%;left:-38%;}
 }
 @media(max-width:400px){
 .ql-grid{grid-template-columns:repeat(4,1fr);gap:5px;}

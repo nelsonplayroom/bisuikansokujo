@@ -250,7 +250,7 @@ letter-spacing:0.12em;
 color:#4a3570;
 }
 .credit-name{
-color:#a078c0;
+color:#d4a0e8;font-size:0.72rem;font-weight:700;
 transition:color 0.3s;
 }
 .credit-item:hover .credit-name{color:#e0a0f0;}
@@ -434,31 +434,37 @@ cursor:pointer;transition:all 0.3s;
 
 /* ===== SLIDER CREDIT ===== */
 .slider-credit{
-display:flex;align-items:center;justify-content:center;gap:0;
+display:flex;flex-direction:column;align-items:center;gap:4px;
 padding:0 0 32px;
 position:relative;z-index:1;
 }
+.slider-credit-label{
+font-family:‘Space Mono’,monospace;
+font-size:0.48rem;letter-spacing:0.30em;
+color:#6040a0;margin-bottom:4px;
+text-align:center;text-transform:uppercase;
+}
 .slider-credit-inner{
-display:inline-flex;align-items:center;gap:12px;
+display:flex;flex-direction:column;align-items:center;gap:6px;
 background:rgba(10,5,25,0.65);
 border:1px solid rgba(180,80,200,0.18);
-border-radius:100px;
-padding:6px 18px;
+border-radius:14px;
+padding:10px 22px;
 backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
 }
 .slider-credit-item{
-display:flex;align-items:center;gap:5px;
-font-family:‘Space Mono’,monospace;font-size:0.5rem;
+display:flex;align-items:center;gap:7px;
+font-family:‘Space Mono’,monospace;
 letter-spacing:0.08em;
 color:#7858a8;
 transition:color 0.3s;
 white-space:nowrap;
 }
 .slider-credit-item:hover{color:#c87fc8;}
-.slider-credit-role{font-size:0.44rem;letter-spacing:0.12em;color:#4a3570;}
-.slider-credit-name{color:#a078c0;transition:color 0.3s;}
-.slider-credit-item:hover .slider-credit-name{color:#e0a0f0;}
-.slider-credit-sep{width:1px;height:14px;background:rgba(180,80,200,0.22);}
+.slider-credit-role{font-size:0.62rem;letter-spacing:0.12em;color:#8060b0;}
+.slider-credit-name{color:#d4a0e8;font-size:0.72rem;font-weight:700;transition:color 0.3s;}
+.slider-credit-item:hover .slider-credit-name{color:#f0c8ff;}
+.slider-credit-sep{display:none;}
 
 /* DRIP DECO */
 .ddeco{position:fixed;right:26px;top:50%;transform:translateY(-50%);z-index:50;display:flex;flex-direction:column;align-items:center;pointer-events:none;}
@@ -745,8 +751,11 @@ nav{padding:12px 18px;}
 .char-slide{min-height:350px;}
 .char-slide img{max-height:340px;}
 footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
-.slider-credit-inner{flex-direction:column;gap:6px;border-radius:14px;padding:10px 16px;}
-.slider-credit-sep{width:40px;height:1px;}
+.slider-credit-inner{padding:10px 16px;}
+.slider-credit-role{font-size:0.58rem;}
+.slider-credit-name{font-size:0.66rem;}
+.credit-role{font-size:0.58rem;}
+.credit-name{font-size:0.66rem;}
 /* watermark: phone — large, left-offset so head clears foreground char */
 .hchar-watermark{height:90%;top:-2%;left:-38%;transform:scale(1.5);transform-origin:top left;
 .ql-row{grid-template-columns:repeat(4,1fr);gap:8px;}
@@ -770,7 +779,7 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 <!-- LOADER -->
 
 <div id="loader">
-  <div class="ld-name">偲睡れーか</div>
+  <div class="ld-name">Now Loading...</div>
   <div class="ld-bag-wrap">
     <div class="ld-bag"><div class="ld-fill"></div><span class="ld-bag-lbl">Rk</span></div>
     <div class="ld-tube"><div class="ld-drop"></div></div>
@@ -852,6 +861,7 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
       <!-- ① HERO CREDIT STRIP -->
       <div class="credit-strip">
         <div class="credit-inner">
+          <div class="credit-label">— Creator —</div>
           <a href="https://x.com/48_gyozaman" target="_blank" rel="noopener" class="credit-item">
             <span class="credit-role">立ち絵</span>
             <span class="credit-dot"></span>
@@ -956,7 +966,7 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 ひとつの処方箋。
 
 遠い星のどこかで、
-やさしい宇宙人がつくった<em>ヒト型のお薬</em>。
+やさしい宇宙人がつくった<em>ヒト型の薬</em>。
 
 それが、偲睡れーか。
 
@@ -967,7 +977,7 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 
 歌をうたい、絵を描き、
 みんなを偲び、みんなと眠る。
-宇宙生まれの<em>ヒト型おくすり</em>。
+<em>宇宙生まれの</em><em>ヒト型おくすり</em>。
 
 強く効く薬ではありません。
 けれど、頓服のように。
@@ -1095,11 +1105,11 @@ VTuber「偲睡れーか」のファンアート制作のご依頼です。
   <h2 class="sec-ttl">歌みた</h2>
   <div class="yt-g">
     <div class="yt-it yt-full rv">
-      <iframe src="https://www.youtube.com/embed/ut5lFekIkhc" title="Re-ka Music 01" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/q_Rr6--xsxE" title="Re-ka Music ディア" allowfullscreen loading="lazy"></iframe>
       <div class="yt-lbl">▷ FEATURED SONG</div>
     </div>
     <div class="yt-it rv d1">
-      <iframe src="https://www.youtube.com/embed/q_Rr6--xsxE" title="Re-ka Music 02" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/ut5lFekIkhc" title="Re-ka Music 01" allowfullscreen loading="lazy"></iframe>
       <div class="yt-lbl">▷ SONG 02</div>
     </div>
     <div class="yt-it rv d2">
@@ -1180,6 +1190,7 @@ VTuber「偲睡れーか」のファンアート制作のご依頼です。
   <!-- ② SLIDER CREDIT -->
 
   <div class="slider-credit rv">
+    <div class="slider-credit-label">— Creator —</div>
     <div class="slider-credit-inner">
       <a href="https://x.com/48_gyozaman" target="_blank" rel="noopener" class="slider-credit-item">
         <span class="slider-credit-role">立ち絵</span>

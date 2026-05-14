@@ -219,25 +219,36 @@ backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);animation:flt 5s eas
 /* ===== CREDIT STRIP ===== */
 .credit-strip{
 position:relative;z-index:4;
-display:flex;align-items:center;justify-content:center;gap:0;
-margin-top:10px;
+display:flex;align-items:center;justify-content:center;
+margin-top:12px;
 width:100%;
 }
 .credit-inner{
-display:inline-flex;align-items:center;gap:12px;
+display:inline-flex;flex-direction:column;align-items:center;gap:6px;
 background:rgba(10,5,25,0.72);
 border:1px solid rgba(180,80,200,0.2);
-border-radius:100px;
-padding:6px 16px;
+border-radius:16px;
+padding:10px 22px;
 backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
 }
+/* Creator見出し — credit-inner内の最上部 */
+.credit-label{
+font-family:‘Space Mono’,monospace;
+font-size:0.46rem;letter-spacing:0.30em;
+text-transform:uppercase;color:#6040a0;
+margin-bottom:2px;
+}
+/* 名前リスト横並び */
+.credit-names-row{
+display:flex;align-items:center;gap:14px;
+}
 .credit-sep{
-width:1px;height:14px;
-background:rgba(180,80,200,0.25);
+width:1px;height:16px;
+background:rgba(180,80,200,0.30);
 }
 .credit-item{
-display:flex;align-items:center;gap:5px;
-font-family:‘Space Mono’,monospace;font-size:0.5rem;
+display:flex;align-items:center;gap:6px;
+font-family:‘Space Mono’,monospace;
 letter-spacing:0.08em;
 color:#7858a8;
 transition:color 0.3s;
@@ -245,15 +256,15 @@ white-space:nowrap;
 }
 .credit-item:hover{color:#c87fc8;}
 .credit-role{
-font-size:0.44rem;
+font-size:0.54rem;
 letter-spacing:0.12em;
-color:#4a3570;
+color:#7050a0;
 }
 .credit-name{
 color:#d4a0e8;font-size:0.72rem;font-weight:700;
 transition:color 0.3s;
 }
-.credit-item:hover .credit-name{color:#e0a0f0;}
+.credit-item:hover .credit-name{color:#f0c8ff;}
 .credit-dot{
 width:3px;height:3px;border-radius:50%;
 background:rgba(180,80,200,0.4);
@@ -356,9 +367,9 @@ will-change:transform;
 }
 .char-slide{
 min-width:100%;display:flex;justify-content:center;align-items:flex-end;
-padding:32px 20px 0;
+padding:20px 20px 0;
 position:relative;overflow:hidden;
-min-height:520px;
+min-height:680px;
 }
 .char-slide-bg{
 position:absolute;inset:0;
@@ -366,7 +377,7 @@ background:radial-gradient(ellipse at 50% 80%,rgba(140,50,200,0.35) 0%,rgba(40,1
 }
 .char-slide img{
 position:relative;z-index:2;
-max-height:500px;width:auto;
+max-height:660px;width:auto;
 filter:drop-shadow(0 0 24px rgba(180,80,220,0.7)) drop-shadow(0 0 60px rgba(140,40,200,0.4));
 transition:filter 0.5s;
 }
@@ -748,8 +759,8 @@ nav{padding:12px 18px;}
 .rules-inner{padding:16px 16px 20px;}
 .rules-tabs{gap:6px;}
 .rtab{font-size:0.54rem;padding:6px 12px;}
-.char-slide{min-height:350px;}
-.char-slide img{max-height:340px;}
+.char-slide{min-height:480px;}
+.char-slide img{max-height:460px;}
 footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 .slider-credit-inner{padding:10px 16px;}
 .slider-credit-role{font-size:0.58rem;}
@@ -862,17 +873,19 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
       <div class="credit-strip">
         <div class="credit-inner">
           <div class="credit-label">— Creator —</div>
-          <a href="https://x.com/48_gyozaman" target="_blank" rel="noopener" class="credit-item">
-            <span class="credit-role">立ち絵</span>
-            <span class="credit-dot"></span>
-            <span class="credit-name">48様</span>
-          </a>
-          <div class="credit-sep"></div>
-          <a href="https://x.com/kawasimo_yung?s=21&t=Zz6wwDLyI6CnOS5q8yiA3A" target="_blank" rel="noopener" class="credit-item">
-            <span class="credit-role">モデリング</span>
-            <span class="credit-dot"></span>
-            <span class="credit-name">河下ユング様</span>
-          </a>
+          <div class="credit-names-row">
+            <a href="https://x.com/48_gyozaman" target="_blank" rel="noopener" class="credit-item">
+              <span class="credit-role">立ち絵</span>
+              <span class="credit-dot"></span>
+              <span class="credit-name">48様</span>
+            </a>
+            <div class="credit-sep"></div>
+            <a href="https://x.com/kawasimo_yung?s=21&t=Zz6wwDLyI6CnOS5q8yiA3A" target="_blank" rel="noopener" class="credit-item">
+              <span class="credit-role">モデリング</span>
+              <span class="credit-dot"></span>
+              <span class="credit-name">河下ユング様</span>
+            </a>
+          </div>
         </div>
       </div>
     </div>

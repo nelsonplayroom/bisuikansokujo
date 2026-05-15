@@ -377,14 +377,22 @@ background:radial-gradient(ellipse at 50% 80%,rgba(140,50,200,0.35) 0%,rgba(40,1
 }
 .char-slide img{
 position:relative;z-index:2;
-max-height:660px;width:auto;
+/* 高さ固定で統一ベースを作る */
+height:620px;
+width:auto;
+max-width:none;
+transform-origin:bottom center;
+transition:filter 0.5s, transform 0.5s;
 filter:drop-shadow(0 0 24px rgba(180,80,220,0.7)) drop-shadow(0 0 60px rgba(140,40,200,0.4));
-transition:filter 0.5s;
 }
 .char-slide:hover img{
 filter:drop-shadow(0 0 32px rgba(200,100,240,0.9)) drop-shadow(0 0 80px rgba(160,60,220,0.55));
 }
-
+/* 各スライド個別スケール調整（キャラの見た目サイズを揃える） */
+.slide-s1 img{ transform:scale(1.00); } /* VER.02 JACKET    — 基準 */
+.slide-s2 img{ transform:scale(1.00); } /* VER.02 NO HAT    — 同アセット系 */
+.slide-s3 img{ transform:scale(1.08); } /* VER.01 NO JACKET — キャンバス余白差分補正 */
+.slide-s4 img{ transform:scale(0.90); } /* ILLUSTRATION     — 構図・余白が異なる */
 /* Slider controls */
 .char-slider-btn{
 position:absolute;top:50%;z-index:10;transform:translateY(-50%);
@@ -760,7 +768,9 @@ nav{padding:12px 18px;}
 .rules-tabs{gap:6px;}
 .rtab{font-size:0.54rem;padding:6px 12px;}
 .char-slide{min-height:480px;}
-.char-slide img{max-height:460px;}
+.char-slide img{height:440px;}
+.slide-s3 img{transform:scale(1.08);}
+.slide-s4 img{transform:scale(0.90);}
 footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 .slider-credit-inner{padding:10px 16px;}
 .slider-credit-role{font-size:0.58rem;}
@@ -898,7 +908,7 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
   <div class="ql-label">CHANNELS &amp; LINKS</div>
   <div class="ql-grid">
 
-
+```
 <!-- ROW 1: 4 square icons (purple / pink tones) -->
 <div class="ql-row">
   <a href="https://x.gd/1789O" target="_blank" rel="noopener" class="ql-item ql-item-purple">
@@ -958,7 +968,7 @@ footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
     <div class="ql-sub">まとめ</div>
   </a>
 </div>
-
+```
 
   </div>
 </div>
@@ -1118,7 +1128,7 @@ VTuber「偲睡れーか」のファンアート制作のご依頼です。
   <h2 class="sec-ttl">歌みた</h2>
   <div class="yt-g">
     <div class="yt-it yt-full rv">
-      <iframe src="https://www.youtube.com/embed/83kiu4VjKJ0" title="Re-ka Music ディア" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/q_Rr6--xsxE" title="Re-ka Music ディア" allowfullscreen loading="lazy"></iframe>
       <div class="yt-lbl">▷ FEATURED SONG</div>
     </div>
     <div class="yt-it rv d1">
@@ -1126,7 +1136,7 @@ VTuber「偲睡れーか」のファンアート制作のご依頼です。
       <div class="yt-lbl">▷ SONG 02</div>
     </div>
     <div class="yt-it rv d2">
-      <iframe src="https://www.youtube.com/embed/q_Rr6--xsxE" title="Re-ka Music 03" allowfullscreen loading="lazy"></iframe>
+      <iframe src="https://www.youtube.com/embed/83kiu4VjKJ0" title="Re-ka Music 03" allowfullscreen loading="lazy"></iframe>
       <div class="yt-lbl">▷ SONG 03</div>
     </div>
   </div>
@@ -1171,25 +1181,25 @@ VTuber「偲睡れーか」のファンアート制作のご依頼です。
     </button>
     <div class="char-slider-inner" id="sliderInner">
       <!-- Slide 1: jacket on -->
-      <div class="char-slide">
+      <div class="char-slide slide-s1">
         <div class="char-slide-bg"></div>
         <img src="RekaV_ver02_20250422.png" alt="偲睡れーか ver.02 上着あり">
         <span class="char-slide-lbl">VER.02 — JACKET</span>
       </div>
       <!-- Slide 2: no hat -->
-      <div class="char-slide">
+      <div class="char-slide slide-s2">
         <div class="char-slide-bg"></div>
         <img src="RekaV_ver02_20250422_ニット帽なし.png" alt="偲睡れーか ver.02 ニット帽なし">
         <span class="char-slide-lbl">VER.02 — NO HAT</span>
       </div>
       <!-- Slide 3: no jacket -->
-      <div class="char-slide">
+      <div class="char-slide slide-s3">
         <div class="char-slide-bg"></div>
         <img src="立ち絵上着無し.png" alt="偲睡れーか 上着なし">
         <span class="char-slide-lbl">VER.01 — NO JACKET</span>
       </div>
       <!-- Slide 4: illustration -->
-      <div class="char-slide">
+      <div class="char-slide slide-s4">
         <div class="char-slide-bg"></div>
         <img src="984f9ad0374e19f3.png" alt="偲睡れーか illustration">
         <span class="char-slide-lbl">ILLUSTRATION</span>

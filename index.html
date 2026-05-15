@@ -389,10 +389,10 @@ filter:drop-shadow(0 0 24px rgba(180,80,220,0.7)) drop-shadow(0 0 60px rgba(140,
 filter:drop-shadow(0 0 32px rgba(200,100,240,0.9)) drop-shadow(0 0 80px rgba(160,60,220,0.55));
 }
 /* 各スライド個別スケール調整（キャラの見た目サイズを揃える） */
-.slide-s1 img{ transform:scale(1.00); } /* VER.02 JACKET    — 基準 */
-.slide-s2 img{ transform:scale(1.00); } /* VER.02 NO HAT    — 同アセット系 */
-.slide-s3 img{ transform:scale(1.08); } /* VER.01 NO JACKET — キャンバス余白差分補正 */
-.slide-s4 img{ transform:scale(0.90); } /* ILLUSTRATION     — 構図・余白が異なる */
+.slide-s1 img{ transform:scale(1.18); } /* VER.02 JACKET    — s2基準に拡大 */
+.slide-s2 img{ transform:scale(1.00); } /* VER.02 NO HAT    — 基準 */
+.slide-s3 img{ transform:scale(1.00); } /* VER.01 NO JACKET — s2と同等 */
+.slide-s4 img{ transform:scale(1.22); } /* ILLUSTRATION     — s2基準に拡大 */
 /* Slider controls */
 .char-slider-btn{
 position:absolute;top:50%;z-index:10;transform:translateY(-50%);
@@ -769,8 +769,9 @@ nav{padding:12px 18px;}
 .rtab{font-size:0.54rem;padding:6px 12px;}
 .char-slide{min-height:480px;}
 .char-slide img{height:440px;}
-.slide-s3 img{transform:scale(1.08);}
-.slide-s4 img{transform:scale(0.90);}
+.slide-s1 img{transform:scale(1.18);}
+.slide-s3 img{transform:scale(1.00);}
+.slide-s4 img{transform:scale(1.22);}
 footer{flex-direction:column;gap:8px;text-align:center;padding:20px;}
 .slider-credit-inner{padding:10px 16px;}
 .slider-credit-role{font-size:0.58rem;}
